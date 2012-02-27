@@ -32,21 +32,9 @@
 		<div class="container">
 			<div class="row">
 				<div id="header" class="row-border-bottom-top">
-					<h1 class="span4 sans"><a href="<?=bloginfo('url')?>"><?=bloginfo('name')?></a></h1>
-					<?php $options = get_option(THEME_OPTIONS_NAME);?>
-					<?php if($options['facebook_url'] or $options['twitter_url']):?>
-					<ul class="social menu horizontal span3">
-						<?php if($options['facebook_url']):?>
-						<li><a class="ignore-external facebook" href="<?=$options['facebook_url']?>">Facebook</a></li>
-						<?php endif;?>
-						<?php if($options['twitter_url']):?>
-						<li><a class="ignore-external twitter" href="<?=$options['twitter_url']?>">Twitter</a></li>
-						<?php endif;?>
-					</ul>
-					<?php else:?>
-					<div class="social span3">&nbsp;</div>
-					<?php endif;?>
+					<h1 class="span6"><a href="<?=bloginfo('url')?>" class=""><?=bloginfo('name')?></a></h1>
+					<?=get_menu('header-menu', 'menu horizontal span6', 'header-menu')?>
 					<div class="end"><!-- --></div>
 				</div>
 			</div>
-			<?=get_menu('header-menu', 'menu horizontal span12', 'header-menu')?>
+			

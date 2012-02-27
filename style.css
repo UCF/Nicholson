@@ -75,3 +75,18 @@ Version: v1.0.0
 }
 .news .item a{font-weight: normal; text-decoration: none; color: #333;}
 .news .item a:hover{text-decoration: underline; color: #ed1c24;}
+
+
+/* Theme Specific Styles */
+@font-face {  
+	font-family: "League Gothic";  
+	src: url('static/fonts/league-gothic/League_Gothic-webfont.eot'); /* IE */  
+	src: local("League Gothic"), url('static/fonts/league-gothic/League_Gothic-webfont.ttf') format("truetype"); /* non-IE */  
+}  
+
+
+#header {padding-bottom:0;border-bottom:0;margin-top:30px;}
+h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;font-weight:100;}
+#header-menu {position:relative;top:8px;}
+#header-menu a {color:#030303;font-weight:200;font-size:18px;}
+#header-menu li:after {content:'';}
