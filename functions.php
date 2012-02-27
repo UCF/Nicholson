@@ -196,6 +196,7 @@ Config::$theme_settings = array(
 			'value'       => $theme_options['search_per_page'],
 		)),
 	),
+	/*
 	'Site' => array(
 		new TextField(array(
 			'name'        => 'Contact Email',
@@ -224,6 +225,7 @@ Config::$theme_settings = array(
 			'value'       => $theme_options['site_description'],
 		)),
 	),
+	*/
 	'Social' => array(
 		new RadioField(array(
 			'name'        => 'Enable OpenGraph',
@@ -267,6 +269,7 @@ Config::$theme_settings = array(
 			),
 			'value'       => $theme_options['enable_flickr'],
 		)),
+		/*
 		new TextField(array(
 			'name'        => 'Flickr Photostream ID',
 			'id'          => THEME_OPTIONS_NAME.'[flickr_id]',
@@ -286,6 +289,7 @@ Config::$theme_settings = array(
 				'18' => 18,
 			),
 		)),
+		*/
 	),
 );
 
