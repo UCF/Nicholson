@@ -503,10 +503,11 @@ class FrontPageCenterpiece extends CustomPostType {
 		$new_item       = 'New Front Page Centerpiece',
 		$public         = True,
 		$use_editor     = True,
-		$use_thumbnails = False,
+		$use_thumbnails = True,
 		$use_order      = True,
 		$use_title      = True,
-		$use_metabox    = True;
+		$use_metabox    = True,
+		$use_shortcode  = False;
 
 	public function fields(){
 		$prefix = $this->options('name').'_';
