@@ -82,11 +82,16 @@ Version: v1.0.0
 	font-family: "League Gothic";  
 	src: url('static/fonts/league-gothic/League_Gothic-webfont.eot'); /* IE */  
 	src: local("League Gothic"), url('static/fonts/league-gothic/League_Gothic-webfont.ttf') format("truetype"); /* non-IE */  
-}  
-
+}
 
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;}
 h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;font-weight:100;}
 #header-menu {position:relative;top:8px;}
 #header-menu a {color:#030303;font-weight:200;font-size:18px;}
 #header-menu li:after {content:'';}
+
+/* Centerpiece */
+#centerpiece {position:relative;}
+#centerpiece .shoutout {position:absolute;top:120px;left:50px;color:#FFF;}
+#centerpiece .shoutout .title {font-weight:bold;display:block;font-size:35px;}
+#centerpiece .shoutout p {display:block;font-style:italic;font-size:16px;font-weight:200;margin-top:10px;line-height:1.4em;letter-spacing:1.5px;}
