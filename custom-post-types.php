@@ -492,4 +492,33 @@ class Page extends CustomPostType {
 		);
 	}
 }
+
+class FrontPageCenterpiece extends CustomPostType {
+	public
+		$name           = 'centerpiece',
+		$plural_name    = 'Front Page Centerpieces',
+		$singular_name  = 'Front Page Centerpiece',
+		$add_new_item   = 'Add New Front Page Centerpiece',
+		$edit_item      = 'Edit Front Page Centerpiece',
+		$new_item       = 'New Front Page Centerpiece',
+		$public         = True,
+		$use_editor     = True,
+		$use_thumbnails = False,
+		$use_order      = True,
+		$use_title      = True,
+		$use_metabox    = True;
+
+	public function fields(){
+		$prefix = $this->options('name').'_';
+		return array(
+			array(
+				'name' => 'Front Page Centerpiece',
+				'desc' => 'To include this publication in other posts, use the following shortcode: <input disabled="disabled" type="text" value="[publication name=]" />',
+				'id'   => 'publication_shortcode',
+				'type' => 'help',
+				'value' => '[publication name="TITLE"]',
+			),
+		);
+	}
+}
 ?>

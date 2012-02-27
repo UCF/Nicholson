@@ -33,10 +33,7 @@ require_once('functions-admin.php');    # Admin/login functions
  * object.
  **/
 Config::$custom_post_types = array(
-	'Video',
-	'Document',
-	'Publication',
-	'Page'
+	'FrontPageCenterpiece',
 );
 
 Config::$body_classes = array('default',);
