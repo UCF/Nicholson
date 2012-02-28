@@ -336,3 +336,14 @@ if ($theme_options['bw_verify']){
 		'content' => htmlentities($theme_options['bw_verify']),
 	);
 }
+
+/**
+ * Truncates a string based on word count
+ *
+ * @return string
+ * @author Chris Conover
+ **/
+function truncate($string, $word_count=30) {
+	$parts = explode(' ', $string, $word_count);
+	return implode(' ', array_slice($parts, 0, count($parts) - 1)).'...';
+}

@@ -12,7 +12,7 @@
 		<div class="span3 right">
 			<h2>Resources</h2>
 			<?=get_menu('resources', array(), 'resources')?>
-			<h2>About the College</h2>
+			<h2 id="about-title">About the College</h2>
 			<?=get_menu('about', array(), 'about')?>
 		</div>
 		<div class="clear" style="width:100%;">&nbsp;</div>

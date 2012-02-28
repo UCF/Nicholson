@@ -110,6 +110,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #below-the-fold {
 	width:960px;
 	margin-left:10px;
+	margin-top:0;
 	border:none;
 	background-color:#FFF;
 	/*-moz-box-shadow: 10px 10px 5px #000;*/
@@ -131,3 +132,27 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #below-the-fold .left {width:400px;}
 #below-the-fold .center,
 #below-the-fold .right {border-left:1px solid #e2e2e2;padding-left:20px;margin-left:20px;}
+#below-the-fold .news .image {float:left;}
+#below-the-fold .news .title {font-size:16px;color:#333;position:relative;top:-3px;line-height:1.3em;}
+#below-the-fold .news .description {color:#333;font-size:15px;}
+#below-the-fold #about-title {text-transform:uppercase;font-family:"Helvetica Neue",Helvetica,sans-serif;color:#3189b6 !important;font-size:16px;}
+
+/* Footer */
+#footer {border:none;margin-top:30px;margin-bottom:20px;}
+#footer h2 {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:25px;margin-bottom:15px;}
+#footer .left,
+#footer .center,
+#footer .right {height:235px;}
+#footer .left,
+#footer .center {border-right:1px solid #e2e2e2;}
+#footer .right {width:250px;}
+#footer .left {width:260px;}
+#social ul {margin:0;padding:0;}
+#social ul li {list-style-type:none;margin-left:10px;float:left;}
+#social ul li:first-child {margin-left:0;}
+#social a {display:block;width:51px;height:51px;text-indent:-500em;background-repeat:no-repeat;background-position:center center;}
+#social #facebook {background-image:url('static/img/facebook.jpg');}
+#social #twitter {background-image:url('static/img/twitter.jpg');}
+#social #linkedin {background-image:url('static/img/linkedin.jpg');}
+#social #youtube {background-image:url('static/img/youtube.jpg');}
+#social #foursquare {background-image:url('static/img/foursquare.jpg');width:165px;height:45px;margin:15px auto;}

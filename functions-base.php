@@ -1088,15 +1088,15 @@ function display_news($header='h2'){?>
 		<ul class="news">
 			<?php foreach($news as $key=>$item): $image = get_article_image($item); $first = ($key == 0);?>
 			<li class="item<?php if($first):?> first<?php else:?> not-first<?php endif;?>">
+				<a class="image ignore-external" href="<?=$item->get_link()?>">
+					<?php if($image):?>
+					<img src="<?=$image?>" alt="Feed image for <?=$item->get_title()?>" />
+					<?php endif;?>
+				</a>
 				<h3 class="title"><a href="<?=$item->get_link()?>" class="ignore-external title"><?=$item->get_title()?></a></h3>
 				<p>
-					<a class="image ignore-external" href="<?=$item->get_link()?>">
-						<?php if($image):?>
-						<img src="<?=$image?>" alt="Feed image for <?=$item->get_title()?>" />
-						<?php endif;?>
-					</a>
 					<a class="description ignore-external"  href="<?=$item->get_link()?>">
-						<?= $item->get_description();?>
+						<?= truncate($item->get_description());?>
 					</a>
 				</p>
 				<div class="end"><!-- --></div>

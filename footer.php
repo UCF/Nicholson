@@ -1,25 +1,49 @@
-			<div id="footer">
-				
-				<?=get_menu('footer-menu', 'menu horizontal', 'footer-menu')?>
+			<div id="footer" class="clearfix">
 				<div class="row">
-					<div class="ucf span9">
-						<a class="ignore-external" href="http://www.ucf.edu"><img src="<?=THEME_IMG_URL?>/logo.png" alt="" title="" /></a>
+					<div class="span4 left" id="social">
+						<h2>Get Social</h2>
+						<ul class="clearfix">
+							<li>
+								<a id="facebook" href="http://www.facebook.com">Facebook</a>
+							</li>
+							<li>
+								<a id="twitter" href="http://www.twitter.com">Twitter</a>
+							</li>
+							<li>
+								<a id="linkedin" href="http://www.linked.com">LinkedIn</a>
+							</li>
+							<li>
+								<a id="youtube" href="http://www.youtube.com">Youtube</a>
+							</li>
+						</ul>
+						<a id="foursquare" href="http://www.foursquare.com">Foursquare</a>
 					</div>
-					<div class="info span3">
-						<?php $options = get_option(THEME_OPTIONS_NAME);?>
-						<?php if($options['site_contact'] or $options['organization_name']):?>
-						<div class="maintained">
-							Site maintained by the <br />
-							<?php if($options['site_contact'] and $options['organization_name']):?>
-							<a href="mailto:<?=$options['site_contact']?>"><?=$options['organization_name']?></a>
-							<?php elseif($options['site_contact']):?>
-							<a href="mailto:<?=$options['site_contact']?>"><?=$options['site_contact']?></a>
-							<?php elseif($options['organization_name']):?>
-							<?=$options['organization_name']?>
-							<?php endif;?>
-						</div>
-						<?php endif;?>
-						<div class="copyright">&copy; University of Central Florida</div>
+					<div class="span5 center">
+						aaa
+					</div>
+					<div class="span3 right">
+						<h2>Contact Us</h2>
+						<p>
+							<strong>Nicholson School of Communication</strong>
+							<br />
+							College of Sciences
+							<br />
+							University of Central Florida
+						</p>
+						<p>
+							P.O. Box 161344
+							<br />
+							Orlando, Florida 32816-1344
+						</p>
+						<p>
+							Phone: 407-823-1711
+							<br />
+							Fax: 407-823-6360
+							<br />
+							Room: NSC 238
+							<br />
+							Email: <a href="mailto:nassc@ucf.edu">nassc@ucf.edu</a>
+						</p>
 					</div>
 				</div>
 			</div>
