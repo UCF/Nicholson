@@ -11,6 +11,22 @@
 							$content = str_replace(']]>', ']]&gt;', apply_filters('the_content', $centerpiece->post_content));
 							echo sprintf('<div class="shoutout sans"><span class="title">%s</span>%s</div>', esc_html($centerpiece->post_title), $content);
 							echo sprintf('<img src="%s" alt="%s" />', $centerpiece_image[0], esc_html($centerpiece->post_title));
+
+							$features = get_posts(array('post_type'=>'program', 'numberposts'=>4, 'orderby'=>'rand'));
+							echo '<ul id="features">';
+							foreach($features as $feature) {
+								$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($feature->ID), 'single-post-thumbnail');
+								if($feature_image) {
+									echo sprintf(
+										'<li><a href="%s"><img src="%s" alt="%s" /><span class="title">%s</span>%s</a></li>',
+										get_permalink($feature->ID),
+										$feature_image[0],
+										$feature->post_title.' Thumbnail',
+										apply_filters('the_title', $feature->post_title),
+										get_post_meta($feature->ID, 'program_feature_text', True)
+									);
+								}
+							}
 						}
 					} else {
 						echo '<div style="text-align:center;font-size:40px;line-height:1.5em;">There is no Front Page Centerpiece to display. Please create on in the WordPress Administration Dashboard.</div>';

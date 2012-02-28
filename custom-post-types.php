@@ -522,4 +522,33 @@ class FrontPageCenterpiece extends CustomPostType {
 		);
 	}
 }
+
+class Program extends CustomPostType {
+	public
+		$name           = 'program',
+		$plural_name    = 'Programs',
+		$singular_name  = 'Program',
+		$add_new_item   = 'Add New Program',
+		$edit_item      = 'Edit Front Program',
+		$new_item       = 'New Front Program',
+		$public         = True,
+		$use_editor     = True,
+		$use_thumbnails = True,
+		$use_order      = True,
+		$use_title      = True,
+		$use_metabox    = True,
+		$use_shortcode  = False;
+
+	public function fields(){
+		$prefix = $this->options('name').'_';
+		return array(
+			array(
+				'name'  => 'Feature Text',
+				'desc'  => 'The content of this field will be used in conjunction with the title of this post to form the content for the front page feature of this program.',
+				'id'    => $prefix.'feature_text',
+				'type'  => 'textarea',
+			),
+		);
+	}
+}
 ?>

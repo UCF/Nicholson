@@ -34,6 +34,7 @@ require_once('functions-admin.php');    # Admin/login functions
  **/
 Config::$custom_post_types = array(
 	'FrontPageCenterpiece',
+	'Program'
 );
 
 Config::$body_classes = array('default',);

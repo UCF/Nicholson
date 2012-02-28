@@ -84,6 +84,8 @@ Version: v1.0.0
 	src: local("League Gothic"), url('static/fonts/league-gothic/League_Gothic-webfont.ttf') format("truetype"); /* non-IE */  
 }
 
+body {background-color:#fcf5e0;background-image:none;}
+
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;}
 h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;font-weight:100;}
 #header-menu {position:relative;top:8px;}
@@ -95,3 +97,10 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #centerpiece .shoutout {position:absolute;top:120px;left:50px;color:#FFF;}
 #centerpiece .shoutout .title {font-weight:bold;display:block;font-size:35px;}
 #centerpiece .shoutout p {display:block;font-style:italic;font-size:16px;font-weight:200;margin-top:10px;line-height:1.4em;letter-spacing:1.5px;}
+
+#features {padding:0;margin:0;position:relative;top:-30px;width:960px;}
+#features li {list-style-type:none;float:left;width:234px;background:#fcf5e0 url('static/img/feature-gradient.png') no-repeat top center;padding-top:5px;margin-left:10px;}
+#features li:first-child {margin-left:-9px;}
+#features li a {display:block;margin-left:7px;color:#000;}
+#features li a img {margin-bottom:20px;}
+#features li a .title {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:20px;padding-right:5px;}
