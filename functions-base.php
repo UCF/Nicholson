@@ -755,6 +755,8 @@ function __init__(){
 	add_image_size('homepage-secondary', 540);
 	register_nav_menu('header-menu', __('Header Menu'));
 	register_nav_menu('footer-menu', __('Footer Menu'));
+	register_nav_menu('resources', __('Resources Menu'));
+	register_nav_menu('about', __('About Menu'));
 	register_sidebar(array(
 		'name'          => __('Sidebar'),
 		'id'            => 'sidebar',
@@ -1127,7 +1129,7 @@ function get_events($start=null, $limit=null){
 
 function get_news($start=null, $limit=null){
 	$options = get_option(THEME_OPTIONS_NAME);
-	$url     = $options['news_url'];
+	$url     = $options['news_url'].'?thumb=100x100';
 	$news    = FeedManager::get_items($url, $start, $limit);
 	return $news;
 }

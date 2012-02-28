@@ -7,7 +7,8 @@ Version: v1.0.0
 
 /*/ Global Styles /*/
 
-.end {clear: both;}
+.clearfix {*zoom: 1;}
+.clearfix:after {clear: both;content: "";display: table;}
 
 .row-border-bottom-top {margin-left:20px;}
 .row-border-bottom-top *:first-child {margin-left:0;}
@@ -103,4 +104,30 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #features li:first-child {margin-left:-9px;}
 #features li a {display:block;margin-left:7px;color:#000;}
 #features li a img {margin-bottom:20px;}
-#features li a .title {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:20px;padding-right:5px;}
+#features li a .title {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:23px;padding-right:5px;}
+
+/* Below the Fold */
+#below-the-fold {
+	width:960px;
+	margin-left:10px;
+	border:none;
+	background-color:#FFF;
+	/*-moz-box-shadow: 10px 10px 5px #000;*/
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+	/*box-shadow: 5px 5px 5px #000;*/
+}
+#below-the-fold h2,
+#below-the-fold h2 a {font-family:"League Gothic",sans-serif;color:#bdad8e !important;font-size:25px;}
+#below-the-fold h2 {margin-bottom:10px;}
+#below-the-fold .events {position:relative;left:-15px;}
+#below-the-fold .events a {color:#333;}
+#below-the-fold #resources,
+#below-the-fold #about {margin:0;padding:0;}
+#below-the-fold #resources li,
+#below-the-fold #about li {list-style-type:none;margin-bottom:6px;}
+#below-the-fold #resources li a,
+#below-the-fold #about li a {color:#333;font-size:16px;}
+#below-the-fold .news {border-bottom:1px solid #e2e2e2;margin-bottom:15px;}
+#below-the-fold .left {width:400px;}
+#below-the-fold .center,
+#below-the-fold .right {border-left:1px solid #e2e2e2;padding-left:20px;margin-left:20px;}

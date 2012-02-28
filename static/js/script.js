@@ -86,7 +86,9 @@ if (typeof jQuery != 'undefined'){
 		Webcom.loadMoreSearchResults($);
 		
 		/* Theme Specific Code Here */
-		Generic.homeDimensions($);
+		//Generic.homeDimensions($);
 		Generic.resizeSearch($);
+
+		$('#below-the-fold .center, #below-the-fold .right').height($('#below-the-fold .left').height());
 	});
 }else{console.log('jQuery dependancy failed to load');}
