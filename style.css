@@ -89,7 +89,7 @@ body {background-color:#fcf5e0;background-image:none;}
 
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;}
 .ie7 #header {margin-bottom:20px;}
-h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;font-weight:100;}
+h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;font-weight:100 !important;}
 .ie9 h1 a {font-size:30px !important;}
 #header-menu {position:relative;top:8px;}
 #header-menu a {color:#030303;font-weight:200;font-size:18px;}
