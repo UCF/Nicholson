@@ -156,3 +156,5 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #social #linkedin {background-image:url('static/img/linkedin.jpg');}
 #social #youtube {background-image:url('static/img/youtube.jpg');}
 #social #foursquare {background-image:url('static/img/foursquare.jpg');width:165px;height:45px;margin:15px auto;}
+#donate {background:#fcf5e0 url('static/img/ribbon.jpg') no-repeat left center;padding-left:86px;height:80px;display:block;}
+#donate:hover {text-decoration:none;}
