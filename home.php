@@ -18,7 +18,7 @@
 								$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($feature->ID), 'single-post-thumbnail');
 								if($feature_image) {
 									echo sprintf(
-										'<li><a href="%s"><img src="%s" alt="%s" /><span class="title">%s</span>%s</a></li>',
+										'<li><a href="%s"><img src="%s" alt="%s" /><p class="title">%s</p>%s</a></li>',
 										get_permalink($feature->ID),
 										$feature_image[0],
 										$feature->post_title.' Thumbnail',
