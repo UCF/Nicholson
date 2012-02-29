@@ -1,5 +1,5 @@
 <?php $options = get_option(THEME_OPTIONS_NAME);?>
-<div class="row">
+<div class="row" id="below-the-fold-row">
 	<div id="below-the-fold" class="clearfix">
 		<div class="span6 left">
 			<?=display_news()?>

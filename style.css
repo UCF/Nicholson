@@ -88,9 +88,12 @@ Version: v1.0.0
 body {background-color:#fcf5e0;background-image:none;}
 
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;}
+.ie7 #header {margin-bottom:20px;}
 h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;font-weight:100;}
+.ie9 h1 a {font-size:30px !important;}
 #header-menu {position:relative;top:8px;}
 #header-menu a {color:#030303;font-weight:200;font-size:18px;}
+#header-menu li {float:left;}
 #header-menu li:after {content:'';}
 
 /* Centerpiece */
@@ -103,8 +106,9 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #features li {list-style-type:none;float:left;width:234px;background:#fcf5e0 url('static/img/feature-gradient.png') no-repeat top center;padding-top:5px;margin-left:10px;}
 #features li:first-child {margin-left:-9px;}
 #features li a {display:block;margin-left:7px;color:#000;}
+#features li a:hover {text-decoration:none;}
 #features li a img {margin-bottom:20px;}
-#features li a .title {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:23px;padding-right:5px;}
+#features li a .title {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:23px;padding-right:5px;line-height:1.1em;margin-bottom:0;}
 
 /* Below the Fold */
 #below-the-fold {
@@ -117,11 +121,20 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
 	/*box-shadow: 5px 5px 5px #000;*/
 }
+.ie8 #below-the-fold {margin-top:30px;}
+.ie #below-the-fold {
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=6, Direction=135, Color='#999999')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=6, Direction=135, Color='#999999');
+}
 #below-the-fold h2,
 #below-the-fold h2 a {font-family:"League Gothic",sans-serif;color:#bdad8e !important;font-size:25px;}
 #below-the-fold h2 {margin-bottom:10px;}
 #below-the-fold .events {position:relative;left:-15px;}
+.ie7 #below-the-fold .events {left:-3px;}
 #below-the-fold .events a {color:#333;}
+.ie7 #below-the-fold .events {margin-top:30px;}
 #below-the-fold #resources,
 #below-the-fold #about {margin:0;padding:0;}
 #below-the-fold #resources li,
