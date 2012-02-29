@@ -117,9 +117,9 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 	margin-top:0;
 	border:none;
 	background-color:#FFF;
-	/*-moz-box-shadow: 10px 10px 5px #000;*/
+	-moz-box-shadow:  0 0 10px rgba(0,0,0,.3);
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-	/*box-shadow: 5px 5px 5px #000;*/
+	box-shadow:  0 0 10px rgba(0,0,0,.3);
 }
 .ie8 #below-the-fold {margin-top:30px;}
 .ie #below-the-fold {
