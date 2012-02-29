@@ -135,7 +135,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #below-the-fold .news .image {float:left;}
 #below-the-fold .news .title {font-size:16px;color:#333;position:relative;top:-3px;line-height:1.3em;}
 #below-the-fold .news .description {color:#333;font-size:15px;}
-#below-the-fold #about-title {text-transform:uppercase;font-family:"Helvetica Neue",Helvetica,sans-serif;color:#3189b6 !important;font-size:16px;}
+#below-the-fold #about-title {text-transform:uppercase;font-family:"Helvetica Neue",Helvetica,sans-serif;color:#3189b6 !important;font-size:16px;margin-top:35px;}
 
 /* Footer */
 #footer {border:none;margin-top:30px;margin-bottom:20px;}
