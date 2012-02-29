@@ -88,7 +88,7 @@ Version: v1.0.0
 body {background-color:#fcf5e0;background-image:none;}
 
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;}
-h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;font-weight:100;}
+h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;font-weight:100 !important;}
 #header-menu {position:relative;top:8px;}
 #header-menu a {color:#030303;font-weight:200;font-size:18px;}
 #header-menu li:after {content:'';}
@@ -118,7 +118,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 	/*box-shadow: 5px 5px 5px #000;*/
 }
 #below-the-fold h2,
-#below-the-fold h2 a {font-family:"League Gothic",sans-serif;color:#bdad8e !important;font-size:25px;}
+#below-the-fold h2 a {font-family:"League Gothic",sans-serif;color:#bdad8e !important;font-size:25px;font-weight:100 !important;}
 #below-the-fold h2 {margin-bottom:10px;}
 #below-the-fold .events {position:relative;left:-15px;}
 #below-the-fold .events a {color:#333;}
@@ -135,11 +135,11 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #below-the-fold .news .image {float:left;}
 #below-the-fold .news .title {font-size:16px;color:#333;position:relative;top:-3px;line-height:1.3em;}
 #below-the-fold .news .description {color:#333;font-size:15px;}
-#below-the-fold #about-title {text-transform:uppercase;font-family:"Helvetica Neue",Helvetica,sans-serif;color:#3189b6 !important;font-size:16px;margin-top:35px;}
+#below-the-fold #about-title {font-weight:bold !important;text-transform:uppercase;font-family:"Helvetica Neue",Helvetica,sans-serif;color:#3189b6 !important;font-size:16px;margin-top:35px;}
 
 /* Footer */
 #footer {border:none;margin-top:30px;margin-bottom:20px;}
-#footer h2 {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:25px;margin-bottom:15px;}
+#footer h2 {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:25px;margin-bottom:15px;font-weight:100 !important;}
 #footer .left,
 #footer .center,
 #footer .right {height:235px;}
