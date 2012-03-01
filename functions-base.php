@@ -754,6 +754,7 @@ function __init__(){
 	add_image_size('homepage', 620);
 	add_image_size('homepage-secondary', 540);
 	register_nav_menu('header-menu', __('Header Menu'));
+	register_nav_menu('feature-menu', __('Feature Menu'));
 	register_nav_menu('resources', __('Resources Menu'));
 	register_nav_menu('about', __('About Menu'));
 	register_sidebar(array(
