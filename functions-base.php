@@ -1054,7 +1054,7 @@ function display_events($header='h2'){?>
 	<?php $count   = $options['events_max_items']?>
 	<?php $events  = get_events(0, ($count) ? $count : 3);?>
 	<?php if(count($events)):?>
-		<<?=$header?>><a href="<?=$events[0]->get_feed()->get_link()?>"><?=$events[0]->get_feed()->get_title()?></a></<?=$header?>>
+		<<?=$header?>><a href="<?=$events[0]->get_feed()->get_link()?>">Events</a></<?=$header?>>
 		<table class="events">
 			<?php foreach($events as $item):?>
 			<tr class="item">
@@ -1084,7 +1084,7 @@ function display_news($header='h2'){?>
 	<?php $count   = $options['news_max_items'];?>
 	<?php $news    = get_news(0, ($count) ? $count : 2);?>
 	<?php if(count($news)):?>
-		<<?=$header?>><a href="<?=$news[0]->get_feed()->get_link()?>"><?=$news[0]->get_feed()->get_title()?></a></<?=$header?>>
+		<<?=$header?>><a href="<?=$news[0]->get_feed()->get_link()?>">Headlines</a></<?=$header?>>
 		<ul class="news">
 			<?php foreach($news as $key=>$item): $image = get_article_image($item); $first = ($key == 0);?>
 			<li class="item<?php if($first):?> first<?php else:?> not-first<?php endif;?>">
