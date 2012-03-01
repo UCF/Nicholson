@@ -1,1 +1,2 @@
-<?php include_once('template-one-column.php');?>
+<?php disallow_direct_load('single.php');?>
+<?=get_template_part('includes/subpage');?>

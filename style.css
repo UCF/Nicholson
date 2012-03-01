@@ -89,7 +89,7 @@ body {background-color:#fcf5e0;background-image:none;}
 
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;}
 .ie7 #header {margin-bottom:20px;}
-h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;font-weight:100 !important;}
+h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;}
 .ie9 h1 a {font-size:30px !important;}
 #header-menu {position:relative;top:8px;}
 #header-menu a {color:#030303;font-weight:200;font-size:18px;}
@@ -142,7 +142,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #below-the-fold #resources li a,
 #below-the-fold #about li a {color:#333;font-size:16px;}
 #below-the-fold .news {border-bottom:1px solid #e2e2e2;margin-bottom:15px;}
-#below-the-fold .left {width:400px;}
+#below-the-fold .left {width:390px;padding-left:15px;}
 #below-the-fold .center,
 #below-the-fold .right {border-left:1px solid #e2e2e2;padding-left:20px;margin-left:20px;}
 #below-the-fold .news .image {float:left;}

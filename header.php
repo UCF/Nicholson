@@ -33,7 +33,7 @@
 	<!--[if IE 8 ]>     <body class="ie ie8 <?=body_classes()?>"><![endif]-->
 	<!--[if IE 9 ]>     <body class="ie ie9 <?=body_classes()?>"><![endif]-->
 	<!--[if (gt IE 9)|!(IE)]><!--> <body class="<?=body_classes()?>"> <!--<![endif]-->
-		<div class="container">
+		<div class="container<?=(is_front_page()) ? ' frontpage': ' subpage'?>">
 			<div class="row">
 				<div id="header" class="row-border-bottom-top  clearfix">
 					<h1 class="span7"><a href="<?=bloginfo('url')?>" class=""><?=bloginfo('name')?></a></h1>
