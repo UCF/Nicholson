@@ -97,7 +97,7 @@ body {background-color:#fcf5e0;background-image:none;}
 
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;}
 .ie7 #header {margin-bottom:20px;}
-h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;}
+h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;letter-spacing:1px;font-weight:normal !important;}
 #header-menu {position:relative;top:8px;}
 #header-menu a {color:#030303;font-weight:200;font-size:18px;}
 #header-menu li {float:left;}
@@ -115,7 +115,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #features li a {display:block;margin-left:7px;color:#000;}
 #features li a:hover {text-decoration:none;}
 #features li a img {margin-bottom:20px;}
-#features li a .title {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:23px;padding-right:5px;line-height:1.1em;margin-bottom:0;}
+#features li a .title {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:23px;padding-right:5px;line-height:1.1em;margin-bottom:0;letter-spacing:1px;}
 
 /* Below the Fold */
 #below-the-fold {
@@ -136,7 +136,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=6, Direction=135, Color='#999999');
 }
 #below-the-fold h2,
-#below-the-fold h2 a {font-family:"League Gothic",sans-serif;color:#bdad8e !important;font-size:25px;font-weight:100 !important;}
+#below-the-fold h2 a {font-family:"League Gothic",sans-serif;color:#bdad8e !important;font-size:25px;font-weight:100 !important;letter-spacing:1px;}
 #below-the-fold h2 {margin-bottom:10px;}
 #below-the-fold .events {position:relative;left:-15px;}
 .ie7 #below-the-fold .events {left:-3px;}
@@ -159,7 +159,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 
 /* Footer */
 #footer {border:none;margin-top:30px;margin-bottom:20px;}
-#footer h2 {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:25px;margin-bottom:15px;font-weight:100 !important;}
+#footer h2 {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:25px;margin-bottom:15px;font-weight:100 !important;letter-spacing:1px;}
 #footer .left,
 #footer .center,
 #footer .right {height:235px;}
@@ -178,3 +178,10 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #social #foursquare {background-image:url('static/img/foursquare.jpg');width:165px;height:45px;margin:15px auto;}
 #donate {background:#fcf5e0 url('static/img/ribbon.jpg') no-repeat left center;padding-left:86px;height:80px;display:block;margin:auto;width:245px;}
 #donate:hover {text-decoration:none;}
+
+/* Subpage */
+.subpage #header h1 {width:375px;}
+.subpage #header h1 a {font-size:30px !important;}
+.subpage #header-menu {top:5px;}
+.subpage h2:first-child {font-size:50px;margin-bottom:15px;font-family:"League Gothic",sans-serif;letter-spacing:1px;color:#010101;margin-top:0;font-weight:normal;}
+.subpage #below-the-fold {margin-top:15px;}
