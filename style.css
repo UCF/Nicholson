@@ -81,8 +81,12 @@ Version: v1.0.0
 /* Theme Specific Styles */
 @font-face {  
 	font-family: "League Gothic";  
-	src: url('static/fonts/league-gothic/League_Gothic-webfont.eot'); /* IE */  
-	src: local("League Gothic"), url('static/fonts/league-gothic/League_Gothic-webfont.ttf') format("truetype"); /* non-IE */  
+	src: url('static/fonts/league-gothic/League_Gothic-webfont.eot'); 
+	src: 
+		local("League Gothic"), 
+		url('static/fonts/league-gothic/League_Gothic-webfont.ttf') format("truetype"),
+		url('static/fonts/league-gothic/League_Gothic-webfont.woff') format("woff"),
+		url('static/fonts/league-gothic/League_Gothic-webfont.svg') format("svg"); 
 }
 
 body {background-color:#fcf5e0;background-image:none;}
@@ -94,7 +98,6 @@ body {background-color:#fcf5e0;background-image:none;}
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;}
 .ie7 #header {margin-bottom:20px;}
 h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;}
-.ie9 h1 a {font-size:30px !important;}
 #header-menu {position:relative;top:8px;}
 #header-menu a {color:#030303;font-weight:200;font-size:18px;}
 #header-menu li {float:left;}
@@ -107,7 +110,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #centerpiece .shoutout p {display:block;font-style:italic;font-size:16px;font-weight:200;margin-top:10px;line-height:1.4em;letter-spacing:1.5px;}
 
 #features {padding:0;margin:0;position:relative;top:-30px;width:960px;}
-#features li {list-style-type:none;float:left;width:234px;background:#fcf5e0 url('static/img/feature-gradient.png') no-repeat top center;padding-top:5px;margin-left:10px;}
+#features li {list-style-type:none;float:left;width:234px;background:#fcf5e0 url('static/img/feature-gradient.png') no-repeat top center;padding-top:7px;margin-left:10px;}
 #features li:first-child {margin-left:-9px;}
 #features li a {display:block;margin-left:7px;color:#000;}
 #features li a:hover {text-decoration:none;}
