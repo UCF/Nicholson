@@ -8,8 +8,10 @@
 					if($centerpiece) {
 						$centerpiece_image = wp_get_attachment_image_src(get_post_thumbnail_id($centerpiece->ID), 'single-post-thumbnail');
 						if($centerpiece_image) {
+							$position = get_post_meta($centerpiece->ID, 'centerpiece_position', True);
+							$position = ($position == '') ? 'left': $position;
 							$content = str_replace(']]>', ']]&gt;', apply_filters('the_content', $centerpiece->post_content));
-							echo sprintf('<div class="shoutout sans"><span class="title">%s</span>%s</div>', esc_html($centerpiece->post_title), $content);
+							echo sprintf('<div class="shoutout sans '.$position.'"><span class="title">%s</span>%s</div>', esc_html($centerpiece->post_title), $content);
 							echo sprintf('<img src="%s" alt="%s" />', $centerpiece_image[0], esc_html($centerpiece->post_title));
 
 							$features = get_posts(array('post_type'=>'program', 'numberposts'=>4, 'orderby'=>'rand'));

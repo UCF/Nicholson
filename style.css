@@ -105,7 +105,11 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 
 /* Centerpiece */
 #centerpiece {position:relative;}
-#centerpiece .shoutout {position:absolute;top:120px;left:50px;color:#FFF;}
+#centerpiece .shoutout {position:absolute;color:#FFF;}
+#centerpiece .shoutout.top {top:25px;left:25px;}
+#centerpiece .shoutout.left {top:120px;left:50px;}
+#centerpiece .shoutout.center {top:120px;left:300px;}
+#centerpiece .shoutout.bottom {top:270px;left:50px;}
 #centerpiece .shoutout .title {font-weight:bold;display:block;font-size:35px;}
 #centerpiece .shoutout p {display:block;font-style:italic;font-size:16px;font-weight:200;margin-top:10px;line-height:1.4em;letter-spacing:1.5px;}
 

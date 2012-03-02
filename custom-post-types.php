@@ -515,10 +515,17 @@ class FrontPageCenterpiece extends CustomPostType {
 			array(
 				'name' => 'Front Page Centerpiece',
 				'desc' => 'To include this publication in other posts, use the following shortcode: <input disabled="disabled" type="text" value="[publication name=]" />',
-				'id'   => 'publication_shortcode',
+				'id'   => $prefix.'help',
 				'type' => 'help',
 				'value' => '[publication name="TITLE"]',
 			),
+			array(
+				'name' => 'Position',
+				'desc' => 'Where on the centerpiece image the content will be displayed',
+				'id'   => $prefix.'position',
+				'type' => 'select',
+				'options' => array('Top Banner' => 'top', 'Left' => 'left', 'Center' => 'center', 'Bottom Banner' => 'bottom')
+			)
 		);
 	}
 }
