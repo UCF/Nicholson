@@ -118,7 +118,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #features li:first-child {margin-left:-9px;}
 #features li a {display:block;margin-left:7px;color:#000;}
 #features li a:hover {text-decoration:none;}
-#features li a img {margin-bottom:20px;}
+#features li a img {margin-bottom:10px;}
 #features li a .title {font-family:"League Gothic",sans-serif;color:#cfa115;font-size:23px;padding-right:5px;line-height:1.1em;margin-bottom:0;letter-spacing:1px;}
 
 /* Below the Fold */
