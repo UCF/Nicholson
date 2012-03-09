@@ -140,7 +140,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=6, Direction=135, Color='#999999');
 }
 #below-the-fold h2,
-#below-the-fold h2 a {font-family:"League Gothic",sans-serif;color:#bdad8e !important;font-size:25px;font-weight:100 !important;letter-spacing:1px;}
+#below-the-fold h2 a {font-weight:bold !important;text-transform:uppercase;font-family:"Helvetica Neue",Helvetica,sans-serif;color:#3189b6 !important;font-size:12px;}
 #below-the-fold h2 {margin-bottom:10px;}
 #below-the-fold .events {position:relative;left:-15px;}
 .ie7 #below-the-fold .events {left:-3px;}
@@ -159,7 +159,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #below-the-fold .news .image {float:left;}
 #below-the-fold .news .title {font-size:16px;color:#333;position:relative;top:-3px;line-height:1.3em;}
 #below-the-fold .news .description {color:#333;font-size:15px;}
-#below-the-fold #about-title {font-weight:bold !important;text-transform:uppercase;font-family:"Helvetica Neue",Helvetica,sans-serif;color:#3189b6 !important;font-size:16px;margin-top:35px;}
+#below-the-fold #about-title {margin-top:35px;}
 
 /* Footer */
 #footer {border:none;margin-top:30px;margin-bottom:20px;}
