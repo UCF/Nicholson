@@ -15,6 +15,7 @@ Version: v1.0.0
 .row-border-bottom-top {margin-left:20px;}
 .row-border-bottom-top *:first-child {margin-left:0;}
 
+
 /*#home .site-image img{display: block; margin: 0; border: 5px solid #fff;}*/
 #home .description{font-size: 16px; font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";}
 #home .content p,
@@ -110,7 +111,7 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 #header-menu a.dropdown-toggle .caret {border-top-color:#000;opacity:.5;filter: alpha(opacity=50);}
 
 /* Centerpiece */
-#centerpiece {position:relative;}
+#centerpiece {position:relative;z-index:-1;}
 #centerpiece .shoutout {position:absolute;color:#FFF;}
 #centerpiece .shoutout.top {top:25px;left:25px;}
 #centerpiece .shoutout.left {top:120px;left:50px;}
