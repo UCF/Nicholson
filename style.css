@@ -54,7 +54,13 @@ Version: v1.0.0
 .events .title,
 .events .title a{font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";}
 .events{border-spacing: 16px; border-collapse:separate; padding: 0; margin: 0; position: relative; top: -16px;}
-.events .date{text-align: center; width: 1px; padding: 8px 12px; background-color: #fef7c8; color: #666; font-weight: bold; border: 1px solid #ded7a8;
+.events .date{
+	text-align:center;
+	padding: 8px 12px;
+	background-color: #fef7c8;
+	color: #666;
+	font-weight: bold;
+	border: 1px solid #ded7a8;
 	-moz-box-shadow: 1px 1px 6px rgba(0, 0, 0, .2);
 	-webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, .2);
 	box-shadow: 1px 1px 6px rgba(0, 0, 0, .2);
