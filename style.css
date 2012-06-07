@@ -100,10 +100,13 @@ body {background-color:#fcf5e0;background-image:none;}
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;}
 .ie7 #header {margin-bottom:20px;}
 h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;letter-spacing:1px;font-weight:normal !important;}
-#header-menu {position:relative;top:8px;}
-#header-menu a {color:#030303;font-weight:200;font-size:18px;}
-#header-menu li {float:left;margin-right:13px;}
+#header-menu a {color:#030303;font-weight:200;font-size:15px;}
 #header-menu li:after {content:'';}
+#header-menu li > a:hover {background-color:#e3ddca;}
+#header-menu li.dropdown-toggle:hover {background-color:#e3ddca;}
+#header-menu li.dropdown-toggle a:hover {background-color:#e3ddca;}
+#header-menu li.open > a {background-color:#d6d0bf;}
+#header-menu a.dropdown-toggle .caret {border-top-color:#000;opacity:.5;filter: alpha(opacity=50);}
 
 /* Centerpiece */
 #centerpiece {position:relative;}

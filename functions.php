@@ -347,3 +347,52 @@ function truncate($string, $word_count=30) {
 	$parts = explode(' ', $string, $word_count);
 	return implode(' ', array_slice($parts, 0, count($parts) - 1)).'...';
 }
+
+/**
+ * Get menu and format for bootstrap
+ *
+ * @return string
+ * @author Chris Conover
+ **/
+function get_bootstrap_menu($name, $classes=null, $id=null, $callback=null) {
+	$locations = get_nav_menu_locations();
+	$menu      = @$locations[$name];
+
+	$items           = wp_get_nav_menu_items($menu);
+	$top_level_items = array();
+
+	foreach($items as $index => $item) {
+		if($item->menu_item_parent != '0') {
+			foreach($items as $_index => $parent_item) {
+				if($item->menu_item_parent == $parent_item->ID) {
+					if(isset($parent_item->children)) {
+						$parent_item->children[] = $item;
+					} else {
+						$parent_item->children = array($item);
+					}
+				}
+			}
+		} else {
+			$top_level_items[] = $item;
+		}
+	}
+	ob_start();?>
+	<ul class="nav nav-pills pull-right<?=!is_null($classes) ? ' '.$classes : ''?>" <?=!is_null($id) ? ' id="'.$id.'"' : ''?>>
+		<? foreach($top_level_items as $item) {
+			if(count($item->children) > 0) { ?>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?=$item->title?> <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<? foreach($item->children as $child_item) {?>
+						<li><a href="<?=$child_item->url?>"><?=$child_item->title?></a></li>
+						<? } ?>
+					</ul>
+				</li>
+			<? } else { ?>
+				<li><a href="<?=$item->url?>"><?=$item->title?></a></li>
+			<? } ?>
+		<? } ?>
+	</ul>
+	<?
+	return ob_get_clean();
+}
