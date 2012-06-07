@@ -37,7 +37,7 @@
 			<div class="row">
 				<div id="header" class="row-border-bottom-top  clearfix">
 					<h1 class="span7"><a href="<?=bloginfo('url')?>" class=""><?=bloginfo('name')?></a></h1>
-					<?=get_bootstrap_menu('header-menu', 'menu horizontal span5', 'header-menu')?>
+					<?=get_bootstrap_menu('header-menu', 'span5', 'header-menu')?>
 					<div class="end"><!-- --></div>
 				</div>
 			</div>
