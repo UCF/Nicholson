@@ -76,7 +76,8 @@ add_shortcode('search_form', 'sc_search_form');
 
 function sc_person_picture_list($attrs) {
 	$attrs['type'] = 'person';
-	$people = sc_object_list($attrs, array('objects_only' => True));
+	$row_size      = isset($attrs['row-size']) ? (int)$attrs['row-size'] : 5;
+	$people        = sc_object_list($attrs, array('objects_only' => True));
 
 	ob_start();
 	?><div class="person-picture-list"><?
@@ -84,7 +85,7 @@ function sc_person_picture_list($attrs) {
 	foreach($people as $person) {
 		$image_url = get_featured_image_url($person);
 		$link      = ($person->post_content != '') ? True : False;
-		if( ($count % 6) == 0) {
+		if( ($count % $row_size) == 0) {
 			if($count > 0) {
 				?></div><?
 			}
@@ -101,7 +102,7 @@ function sc_person_picture_list($attrs) {
 		<?
 		$count++;
 	}
-	?>	</div>
+	?>	</div> 
 	</div>
 	<?
 	return ob_get_clean();
