@@ -653,47 +653,51 @@ class Person extends CustomPostType
 
 	public function objectsToHTML($people, $css_classes) {
 		ob_start();?>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th scope="col" class="name">Name</th>
-					<th scope="col" class="job_title">Title</th>
-					<th scope="col" class="phones">Phone(s)</th>
-					<th scope="col" class="email">E-Mail</th>
-				</tr>
-			</thead>
-			<tbody>
-		<?
-		foreach($people as $person) { 
-			$email = get_post_meta($person->ID, 'person_email', True); 
-			$link = ($person->post_content == '') ? False : True; ?>
-				<tr>
-					<td class="name">
-						<?if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
-							<?=$this->get_name($person)?>
-						<?if($link) {?></a><?}?>
-					</td>
-					<td class="job_title">
-						<?if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
-						<?=get_post_meta($person->ID, 'person_jobtitle', True)?>
-						<?if($link) {?></a><?}?>
-					</td> 
-					<td class="phones">
-						<?if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
-							<ul>
-								<? foreach($this->get_phones($person) as $phone) { ?>
-								<li><?=$phone?></li>
-								<? } ?>
-							</ul>
-						<?if($link) {?></a><?}?>
-					</td>
-					<td class="email">
-						<?=(($email != '') ? '<a href="mailto:'.$email.'">'.$email.'</a>' : '')?>
-					</td>
-				</tr>
-		<? } ?>
-			</tbody>
-	</table> <?
+		<div class="row">
+			<div class="span12">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col" class="name">Name</th>
+							<th scope="col" class="job_title">Title</th>
+							<th scope="col" class="phones">Phone(s)</th>
+							<th scope="col" class="email">E-Mail</th>
+						</tr>
+					</thead>
+					<tbody>
+				<?
+				foreach($people as $person) { 
+					$email = get_post_meta($person->ID, 'person_email', True); 
+					$link = ($person->post_content == '') ? False : True; ?>
+						<tr>
+							<td class="name">
+								<?if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
+									<?=$this->get_name($person)?>
+								<?if($link) {?></a><?}?>
+							</td>
+							<td class="job_title">
+								<?if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
+								<?=get_post_meta($person->ID, 'person_jobtitle', True)?>
+								<?if($link) {?></a><?}?>
+							</td> 
+							<td class="phones">
+								<?if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
+									<ul class="unstyled">
+										<? foreach($this->get_phones($person) as $phone) { ?>
+										<li><?=$phone?></li>
+										<? } ?>
+									</ul>
+								<?if($link) {?></a><?}?>
+							</td>
+							<td class="email">
+								<?=(($email != '') ? '<a href="mailto:'.$email.'">'.$email.'</a>' : '')?>
+							</td>
+						</tr>
+				<? } ?>
+				</tbody>
+			</table> 
+		</div>
+	</div><?
 	return ob_get_clean();
 	}
 } // END class 

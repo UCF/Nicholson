@@ -205,9 +205,10 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 .subpage #below-the-fold {margin-top:15px;}
 
 /* Person Picture List */
-.person-picture-list {text-align:center;margin-top:15px;margin-bottom:15px;}
-.person-picture-list .row {margin-bottom:15px;}
-.person-picture-list .name {font-weight:bold;font-size:16px;}
+.person-picture-list {text-align:center;margin-top:15px;margin-bottom:0px;}
+.person-picture-list .row {margin-bottom:35px;}
+.person-picture-list img {margin-bottom:10px;}
+.person-picture-list .name {font-weight:bold;font-size:16px;margin-bottom:5px;}
 .person-picture-list .title {font-size:12px;}
 
 /* Person Profile */

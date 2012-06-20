@@ -84,14 +84,14 @@ function sc_person_picture_list($attrs) {
 	foreach($people as $person) {
 		$image_url = get_featured_image_url($person);
 		$link      = ($person->post_content != '') ? True : False;
-		if( ($count % 4) == 0) {
+		if( ($count % 5) == 0) {
 			if($count > 0) {
 				?></div><?
 			}
 			?><div class="row"><?
 		}
 		?>
-		<div class="span3 append1">
+		<div class="span2">
 			<? if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
 			<img src="<?=$image_url ? $image_url : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
 			<div class="name"><?=Person::get_name($person)?></div>
