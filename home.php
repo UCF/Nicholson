@@ -29,6 +29,7 @@
 									);
 								}
 							}
+							echo '</ul>';
 						}
 					} else {
 						echo '<div style="text-align:center;font-size:40px;line-height:1.5em;">There is no Front Page Centerpiece to display. Please create on in the WordPress Administration Dashboard.</div>';

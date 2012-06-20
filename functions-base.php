@@ -10,6 +10,7 @@ class Config{
 		$body_classes      = array(), # Body classes 
 		$theme_settings    = array(), # Theme settings
 		$custom_post_types = array(), # Custom post types to register
+		$custom_taxonomies = array(), # Custom taxonomies to register
 		$styles            = array(), # Stylesheets to register
 		$scripts           = array(), # Scripts to register
 		$links             = array(), # <link>s to include in <head>
@@ -489,29 +490,37 @@ function mimetype_to_application($mimetype){
  * @return string
  * @author Jared Lang
  **/
-function sc_object_list($attr, $default_content=null, $sort_func=null){
-	if (!is_array($attr)){return '';}
+function sc_object_list($attrs, $options = array()){
+	if (!is_array($attrs)){return '';}
 	
+	$default_options = array(
+		'default_content' => null,
+		'sort_func'       => null,
+		'objects_only'    => False
+	);
+
+	extract(array_merge($default_options, $options));
+
 	# set defaults and combine with passed arguments
-	$defaults = array(
+	$default_attrs = array(
 		'type'  => null,
 		'limit' => -1,
 		'join'  => 'or',
 		'class' => '',
 	);
-	$options = array_merge($defaults, $attr);
+	$params = array_merge($default_attrs, $attrs);
 	
 	# verify options
-	if ($options['type'] == null){
+	if ($params['type'] == null){
 		return '<p class="error">No type defined for object list.</p>';
 	}
-	if (!is_numeric($options['limit'])){
+	if (!is_numeric($params['limit'])){
 		return '<p class="error">Invalid limit argument, must be a number.</p>';
 	}
-	if (!in_array(strtoupper($options['join']), array('AND', 'OR'))){
+	if (!in_array(strtoupper($params['join']), array('AND', 'OR'))){
 		return '<p class="error">Invalid join type, must be one of "and" or "or".</p>';
 	}
-	if (null == ($class = get_custom_post_type($options['type']))){
+	if (null == ($class = get_custom_post_type($params['type']))){
 		return '<p class="error">Invalid post type.</p>';
 	}
 	
@@ -519,15 +528,16 @@ function sc_object_list($attr, $default_content=null, $sort_func=null){
 	$translate  = array(
 		'tags'       => 'post_tag',
 		'categories' => 'category',
+		'org_groups' => 'org_groups'
 	);
-	$taxonomies = array_diff(array_keys($attr), array_keys($defaults));
+	$taxonomies = array_diff(array_keys($attrs), array_keys($default_attrs));
 	
 	# assemble taxonomy query
 	$tax_queries             = array();
-	$tax_queries['relation'] = strtoupper($options['join']);
+	$tax_queries['relation'] = strtoupper($params['join']);
 	
 	foreach($taxonomies as $tax){
-		$terms = $options[$tax];
+		$terms = $params[$tax];
 		$terms = trim(preg_replace('/\s+/', ' ', $terms));
 		$terms = explode(' ', $terms);
 		
@@ -546,11 +556,12 @@ function sc_object_list($attr, $default_content=null, $sort_func=null){
 	$query_array = array(
 		'tax_query'      => $tax_queries,
 		'post_status'    => 'publish',
-		'post_type'      => $options['type'],
-		'posts_per_page' => $options['limit'],
+		'post_type'      => $params['type'],
+		'posts_per_page' => $params['limit'],
 		'orderby'        => 'menu_order title',
 		'order'          => 'ASC',
 	);
+
 	$query = new WP_Query($query_array);
 	$class = new $class;
 	
@@ -568,8 +579,12 @@ function sc_object_list($attr, $default_content=null, $sort_func=null){
 	
 	wp_reset_postdata();
 	
+	if($objects_only) {
+		return $objects;
+	}
+
 	if (count($objects)){
-		$html = $class->objectsToHTML($objects, $options['class']);
+		$html = $class->objectsToHTML($objects, $params['class']);
 	}else{
 		$html = $default_content;
 	}
@@ -1653,6 +1668,18 @@ function installed_custom_post_types(){
 	'), $installed);
 }
 
+/**
+ * Adding custom post types to the installed array defined in this function
+ * will activate and make available for use those types.
+ **/
+function installed_custom_taxonomies(){
+	$installed = Config::$custom_taxonomies;
+
+	return array_map(create_function('$class', '
+		return new $class;
+	'), $installed);
+}
+
 
 function flush_rewrite_rules_if_necessary(){
 	global $wp_rewrite;
@@ -1673,6 +1700,21 @@ function flush_rewrite_rules_if_necessary(){
 		flush_rewrite_rules();
 	}
 }
+
+
+/**
+ * Registers all installed custom taxonomies
+ *
+ * @return void
+ * @author Chris Conover
+ **/
+function register_custom_taxonomies(){
+	#Register custom post types
+	foreach(installed_custom_taxonomies() as $custom_taxonomy){
+		$custom_taxonomy->register();
+	}
+}
+add_action('init', 'register_custom_taxonomies');
 
 
 /**

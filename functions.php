@@ -22,6 +22,7 @@ define('CB_UID', $theme_options['cb_uid']);
 define('CB_DOMAIN', $theme_options['cb_domain']);
 
 require_once('functions-base.php');     # Base theme functions
+require_once('custom-taxonomies.php');  # Where per theme taxonomies are defined
 require_once('custom-post-types.php');  # Where per theme post types are defined
 require_once('shortcodes.php');         # Per theme shortcodes
 require_once('functions-admin.php');    # Admin/login functions
@@ -34,8 +35,14 @@ require_once('functions-admin.php');    # Admin/login functions
  **/
 Config::$custom_post_types = array(
 	'FrontPageCenterpiece',
-	'Program'
+	'Program',
+	'Person'
 );
+
+Config::$custom_taxonomies = array(
+	'OrganizationalGroups'
+);
+
 
 Config::$body_classes = array('default',);
 
@@ -396,3 +403,17 @@ function get_bootstrap_menu($name, $classes=null, $id=null, $callback=null) {
 	<?
 	return ob_get_clean();
 }
+
+/**
+ * Get menu and format for bootstrap
+ *
+ * @return array
+ * @author Chris Conover
+ **/
+function get_featured_image_url($post) {
+	if(has_post_thumbnail($post) && ($thumbnail_id = get_post_thumbnail_id($post->ID)) && ($image = wp_get_attachment_image_src($thumbnail_id))) {
+		return $image[0];
+	}
+	return False;
+}
+?>

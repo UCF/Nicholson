@@ -73,4 +73,38 @@ function sc_search_form() {
 	return ob_get_clean();
 }
 add_shortcode('search_form', 'sc_search_form');
+
+function sc_person_picture_list($attrs) {
+	$attrs['type'] = 'person';
+	$people = sc_object_list($attrs, array('objects_only' => True));
+
+	ob_start();
+	?><div class="person-picture-list"><?
+	$count = 0;
+	foreach($people as $person) {
+		$image_url = get_featured_image_url($person);
+		$link      = ($person->post_content != '') ? True : False;
+		if( ($count % 4) == 0) {
+			if($count > 0) {
+				?></div><?
+			}
+			?><div class="row"><?
+		}
+		?>
+		<div class="span3 append1">
+			<? if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
+			<img src="<?=$image_url ? $image_url : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
+			<div class="name"><?=Person::get_name($person)?></div>
+			<div class="title"><?=get_post_meta($person->ID, 'person_jobtitle', True)?></div>
+			<? if($link) {?></a><?}?>
+		</div>
+		<?
+		$count++;
+	}
+	?>	</div>
+	</div>
+	<?
+	return ob_get_clean();
+}
+add_shortcode('person-picture-list', 'sc_person_picture_list');
 ?>

@@ -203,3 +203,16 @@ h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League G
 .subpage #header-menu {top:9px;}
 .subpage h2:first-child {font-size:50px;margin-bottom:15px;font-family:"League Gothic",sans-serif;color:#010101;margin-top:0;font-weight:normal;}
 .subpage #below-the-fold {margin-top:15px;}
+
+/* Person Picture List */
+.person-picture-list {text-align:center;margin-top:15px;margin-bottom:15px;}
+.person-picture-list .row {margin-bottom:15px;}
+.person-picture-list .name {font-weight:bold;font-size:16px;}
+.person-picture-list .title {font-size:12px;}
+
+/* Person Profile */
+.person-profile {}
+.person-profile .details hr {margin-top:5px;margin-bottom:5px;}
+.person-profile .details img {margin-bottom:5px;}
+.person-profile .details .phones,
+.person-profile .details .email {font-size:12px;}
