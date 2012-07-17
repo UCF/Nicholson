@@ -106,7 +106,7 @@ body {background-color:#fcf5e0;background-image:none;}
 
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;position:relative;z-index:9999;}
 /*.ie7 #header {margin-bottom:20px;}*/
-h1 > a {color:#cfa115 !important;font-size:45px !important;font-family:"League Gothic",sans-serif;letter-spacing:1px;font-weight:normal !important;}
+h1 > a {color:#cfa115 !important;font-size:42px !important;font-family:"League Gothic",sans-serif;letter-spacing:1px;font-weight:normal !important;}
 #header-menu {position: relative;top:8px;}
 #header-menu a {color:#030303;font-weight:200;font-size:15px;}
 #header-menu li:after {content:'';}

@@ -36,8 +36,8 @@
 		<div class="container<?=(is_front_page()) ? ' frontpage': ' subpage'?>">
 			<div class="row">
 				<div id="header" class="row-border-bottom-top  clearfix">
-					<h1 class="span7"><a href="<?=bloginfo('url')?>" class=""><?=bloginfo('name')?></a></h1>
-					<?=get_bootstrap_menu('header-menu', 'span5', 'header-menu')?>
+					<h1 class="span6"><a href="<?=bloginfo('url')?>" class=""><?=bloginfo('name')?></a></h1>
+					<?=get_bootstrap_menu('header-menu', 'span6', 'header-menu')?>
 					<div class="end"><!-- --></div>
 				</div>
 			</div>
