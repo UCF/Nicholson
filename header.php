@@ -34,11 +34,9 @@
 	<!--[if IE 9 ]>     <body class="ie ie9 <?=body_classes()?>"><![endif]-->
 	<!--[if (gt IE 9)|!(IE)]><!--> <body class="<?=body_classes()?>"> <!--<![endif]-->
 		<div class="container<?=(is_front_page()) ? ' frontpage': ' subpage'?>">
-			<div class="row">
-				<div id="header" class="row-border-bottom-top  clearfix">
-					<h1 class="span6"><a href="<?=bloginfo('url')?>" class=""><?=bloginfo('name')?></a></h1>
-					<?=get_bootstrap_menu('header-menu', 'span6', 'header-menu')?>
-					<div class="end"><!-- --></div>
-				</div>
+			<div class="row" id="header">
+				<h1 class="span6"><a href="<?=bloginfo('url')?>" class=""><?=bloginfo('name')?></a></h1>
+				<?=get_bootstrap_menu('header-menu', 'span6', 'header-menu')?>
+				<div class="end"><!-- --></div>
 			</div>
 			
