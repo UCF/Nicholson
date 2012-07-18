@@ -137,10 +137,6 @@ h1 > a {color:#cfa115 !important;font-size:42px !important;font-family:"League G
 
 /* Below the Fold */
 #below-the-fold {
-	/*
-	width:960px;
-	margin-left:10px;
-	*/
 	margin-top:0;
 	border:none;
 	background-color:#FFF;
@@ -164,10 +160,8 @@ h1 > a {color:#cfa115 !important;font-size:42px !important;font-family:"League G
 #below-the-fold .right {border-left:1px solid #e2e2e2;}
 #below-the-fold .center > *,
 #below-the-fold .right > * {position:relative;left:15px;}
-
-
 #below-the-fold .events {position:relative;left:0;}
-.ie7 #below-the-fold .events {left:-3px;}
+.ie7 #below-the-fold .events {left:12px;}
 #below-the-fold .events a {color:#333;}
 .ie7 #below-the-fold .events {margin-top:30px;}
 #below-the-fold #resources,
@@ -225,3 +219,76 @@ h1 > a {color:#cfa115 !important;font-size:42px !important;font-family:"League G
 .person-profile .details img {margin-bottom:5px;}
 .person-profile .details .phones,
 .person-profile .details .email {font-size:12px;word-wrap:break-word;}
+
+/* Programs */
+.program-well {
+	border:1px solid rgba(238,225,188, .8);
+	padding: 15px;
+	background-color:#FFF;
+	color:#222;
+	box-shadow:  2px 2px 3px 1px rgba(0,0,0,.1);
+}
+	/* Allow for the program well border and 15px of padding on the right and left */
+	.program-well .span12 {width:909px;}
+	.program-well .span11 {width:844px;}
+	.program-well .span10 {width:764px;}
+	.program-well .span9 {width:684px;}
+	.program-well .span8 {width:604px;}
+	.program-well .span7 {width:524px;}
+	.program-well .span6 {width:444px;}
+	.program-well .span5 {width:364px;}
+	.program-well .span4 {width:284px;}
+	.program-well .span3 {width:204px;}
+	.program-well .span2 {width:114px;}
+	.program-well .span1 {width:44px;}
+
+	.ie7 .program-well .span12 {width:899px;}
+	.ie7 .program-well .span11 {width:834px;}
+	.ie7 .program-well .span10 {width:754px;}
+	.ie7 .program-well .span9 {width:674px;}
+	.ie7 .program-well .span8 {width:594px;}
+	.ie7 .program-well .span7 {width:514px;}
+	.ie7 .program-well .span6 {width:434px;}
+	.ie7 .program-well .span5 {width:354px;}
+	.ie7 .program-well .span4 {width:274px;}
+	.ie7 .program-well .span3 {width:194px;}
+	.ie7 .program-well .span2 {width:104px;}
+	.ie7 .program-well .span1 {width:34px;}
+
+	.program-well h3 {}
+	.program-well p {font-size:17px;font-weight:200;line-height:1.4em;color:#333;margin-right:15px;}
+
+.program-section {}
+	.program-section .title {background-color:rgba(253,223,118,.8);}
+	.ie7 .program-section .title,
+	.ie8 .program-section .title {background-color:#fddf76}
+	.program-section .title span {
+		background-color:#ffc907;
+		width:285px;
+		display:block;
+		padding-left:15px;
+		font-size:12px;
+		letter-spacing:.25px;
+		text-transform: uppercase;
+	}
+	.program-section h4 {
+		font-size:20px;
+		line-height: 35px;
+	}
+	.program-section th {font-weight:normal;font-size:10px;line-height:12px;}
+
+	.program-section .well {
+		width:260px;
+		box-shadow:  0 2px 3px 1px rgba(0,0,0,.1);
+		background-color:#FFF;
+	}
+		.program-section .well h4 {font-size:15px;color:#c69601;}
+
+	.program-section .table-striped tbody tr:nth-child(odd) td, 
+	.program-section .table-striped tbody tr:nth-child(odd) th {background-color:#FFF;}
+	
+	.program-section .person-picture-list {text-align:left;}
+	.program-section .person-picture-list .title {background-color:#fcf5e0;}
+	.program-section .person-picture-list a,
+	.program-section .person-picture-list .name a,
+	.program-section .person-picture-list .title a {color:#222;}

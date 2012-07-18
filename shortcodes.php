@@ -108,4 +108,27 @@ function sc_person_picture_list($attrs) {
 	return ob_get_clean();
 }
 add_shortcode('person-picture-list', 'sc_person_picture_list');
+
+function sc_program_well($attrs, $content) {
+	return sprintf('<div class="row"><div class="span12"><div class="program-well">%s</div></div></div>', do_shortcode($content));
+}
+add_shortcode('program-well', 'sc_program_well');
+
+function sc_program_section($attrs, $content) {
+	$title = isset($attrs['title']) ? '<span>'.$attrs['title'].'</span>' : '';
+	return sprintf('
+		<div class="program-section">
+			<div class="row">
+				<div class="span12">
+					<h3 class="title">%s</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					%s
+				</div>
+			</div>
+		</div>', $title, do_shortcode($content));
+}
+add_shortcode('program-section', 'sc_program_section');
 ?>
