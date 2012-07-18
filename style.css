@@ -276,7 +276,7 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 .program-section {}
 	.program-section .title {background-color:rgba(253,223,118,.8);}
 	.ie7 .program-section .title,
-	.ie8 .program-section .title {background-color:#e8bc1c}
+	.ie8 .program-section .title {background-color:#fddf70}
 	.program-section .title span {
 		background-color:#e8bc1c;
 		width:285px;
