@@ -594,13 +594,13 @@ class Person extends CustomPostType
 			$fields = array(
 				array(
 					'name'    => __('Title Prefix'),
-					'desc'    => '',
+					'desc'    => _('Example: Dr.'),
 					'id'      => $this->options('name').'_title_prefix',
 					'type'    => 'text',
 				),
 				array(
 					'name'    => __('Title Suffix'),
-					'desc'    => __('Be sure to include leading comma or space if neccessary.'),
+					'desc'    => __('Be sure to include leading comma or space if neccessary.<br />Example:, Ed.D'),
 					'id'      => $this->options('name').'_title_suffix',
 					'type'    => 'text',
 				),
@@ -621,6 +621,18 @@ class Person extends CustomPostType
 					'desc'    => __(''),
 					'id'      => $this->options('name').'_email',
 					'type'    => 'text',
+				),
+				array(
+					'name'    => __('Office Location'),
+					'desc'    => __('A URL of a location on the Online Campus Map (e.g. http://map.ucf.edu/?show=1)'),
+					'id'      => $this->options('name').'_office_location',
+					'type'    => 'text',
+				),
+				array(
+					'name'    => __('C.V.'),
+					'desc'    => __(''),
+					'id'      => $this->options('name').'_cv',
+					'type'    => 'file',
 				),
 				array(
 					'name'    => __('Order By Name'),
