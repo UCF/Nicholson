@@ -36,7 +36,8 @@ require_once('functions-admin.php');    # Admin/login functions
 Config::$custom_post_types = array(
 	'FrontPageCenterpiece',
 	'Program',
-	'Person'
+	'Person',
+	'Post'
 );
 
 Config::$custom_taxonomies = array(

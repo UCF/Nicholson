@@ -701,4 +701,48 @@ class Person extends CustomPostType
 	return ob_get_clean();
 	}
 } // END class 
+
+/**
+ * Override base post type to poeple taxonomy
+ *
+ * @author Chris Conover
+ **/
+class Post extends CustomPostType
+{
+	public 
+		$name           = 'post',
+		$plural_name    = 'Posts',
+		$singular_name  = 'Post',
+		$add_new_item   = 'Add New Post',
+		$edit_item      = 'Edit Post',
+		$new_item       = 'New Post',
+		$public         = True,
+		$use_thumbnails = True,
+		$use_editor     = True,
+		$use_order      = True,
+		$use_title      = True,
+		$use_metabox    = True,
+		$taxonomies     = Array('people', 'post_tag', 'category'),
+		$built_in       = True;
+
+	public function fields() {
+
+		# Person options
+		$person_options = array();
+		foreach(get_posts(array('num_posts'=>-1, 'post_type'=>'person', 'orderby'=>'post_title')) as $person) {
+			$person_options[Person::get_name($person)] = $person->ID;
+		}
+
+		return array(
+			array(
+				'name'    => __('Person'),
+				'desc'    => 'By selecting a person associated with this post, it will appear on their profile page.',
+				'id'      => $this->options('name').'_person',
+				'type'    => 'select',
+				'options' => $person_options
+			),
+		);
+	}
+}
+
 ?>
