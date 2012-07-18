@@ -7,7 +7,7 @@ Version: v1.0.0
 
 /*/ Global Styles /*/
 
-#UCFHBHeaderLinks {height:auto;}
+#UCFHBHeaderLinks {height:auto;display:inline;font-size:auto;padding:2px;margin:0;}
 
 .clearfix {*zoom: 1;}
 .clearfix:after {clear: both;content: "";display: table;}
@@ -107,14 +107,14 @@ body {background-color:#fcf5e0;background-image:none;}
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;position:relative;z-index:9999;}
 /*.ie7 #header {margin-bottom:20px;}*/
 h1 > a {color:#cfa115 !important;font-size:42px !important;font-family:"League Gothic",sans-serif;letter-spacing:1px;font-weight:normal !important;}
-#header-menu {position: relative;top:8px;}
-#header-menu a {color:#030303;font-weight:200;font-size:15px;}
-#header-menu li:after {content:'';}
-#header-menu li > a:hover {background-color:#e3ddca;}
-#header-menu li.dropdown-toggle:hover {background-color:#e3ddca;}
-#header-menu li.dropdown-toggle a:hover {background-color:#e3ddca;}
-#header-menu li.open > a {background-color:#cfc9b8;}
-#header-menu a.dropdown-toggle .caret {border-top-color:#000;opacity:.5;filter: alpha(opacity=50);}
+.nav-pills {position: relative;top:8px;}
+.nav-pills a {color:#030303;font-weight:200;font-size:15px;}
+.nav-pills li:after {content:'';}
+.nav-pills li > a:hover {background-color:#e3ddca;}
+.nav-pills li.dropdown-toggle:hover {background-color:#e3ddca;}
+.nav-pills li.dropdown-toggle a:hover {background-color:#e3ddca;}
+.nav-pills li.open > a {background-color:#cfc9b8;}
+.nav-pills a.dropdown-toggle .caret {border-top-color:#000;opacity:.5;filter: alpha(opacity=50);}
 
 /* Centerpiece */
 #centerpiece {position:relative;}
