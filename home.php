@@ -14,7 +14,7 @@
 							echo sprintf('<div class="shoutout sans '.$position.'"><span class="title">%s</span>%s</div>', esc_html($centerpiece->post_title), $content);
 							echo sprintf('<img src="%s" alt="%s" />', $centerpiece_image[0], esc_html($centerpiece->post_title));
 
-							$features = get_posts(array('post_type'=>'program', 'numberposts'=>5, 'orderby'=>'rand'));
+							$features = get_posts(array('post_type'=>'program', 'numberposts'=>5, 'orderby'=>'menu_order', 'order'=>'asc'));
 							echo '<ul id="features">';
 							foreach($features as $feature) {
 								$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($feature->ID), 'single-post-thumbnail');
