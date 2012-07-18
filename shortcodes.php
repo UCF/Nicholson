@@ -115,20 +115,26 @@ function sc_program_well($attrs, $content) {
 add_shortcode('program-well', 'sc_program_well');
 
 function sc_program_section($attrs, $content) {
-	$title = isset($attrs['title']) ? '<span>'.$attrs['title'].'</span>' : '';
-	return sprintf('
-		<div class="program-section">
-			<div class="row">
-				<div class="span12">
-					<h3 class="title">%s</h3>
+	if(!isset($attrs['title']) || $attrs['title'] == '') {
+		print 'The `title` attribute is required for the `program-section` shortcode.';
+	} else {
+		$title = $attrs['title'];
+		$id    = sanitize_title($title);
+
+		return sprintf('
+			<div class="program-section" id="%s">
+				<div class="row">
+					<div class="span12">
+						<h3 class="title"><span>%s</span></h3>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="span12">
-					%s
+				<div class="row">
+					<div class="span12">
+						%s
+					</div>
 				</div>
-			</div>
-		</div>', $title, do_shortcode($content));
+			</div>', $id, $title, do_shortcode($content));
+	}
 }
 add_shortcode('program-section', 'sc_program_section');
 ?>
