@@ -88,7 +88,8 @@ if (typeof jQuery != 'undefined'){
 		/* Theme Specific Code Here */
 		//Generic.homeDimensions($);
 		//Generic.resizeSearch($);
-
-		$('#below-the-fold .center, #below-the-fold .right').height($('#below-the-fold').height() - 15);
+		$(window).load(function() {
+			$('#below-the-fold .center, #below-the-fold .right').height($('#below-the-fold').height() - 15);
+		});
 	});
 }else{console.log('jQuery dependancy failed to load');}
