@@ -106,7 +106,7 @@ body {background-color:#fcf5e0;background-image:none;}
 
 #header {padding-bottom:0;border-bottom:0;margin-top:30px;position:relative;z-index:9999;}
 /*.ie7 #header {margin-bottom:20px;}*/
-h1 > a {color:#f3c41d !important;font-size:42px !important;font-family:"League Gothic",sans-serif;letter-spacing:1px;font-weight:normal !important;}
+h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League Gothic",sans-serif;letter-spacing:1px;font-weight:normal !important;}
 .nav-pills {position: relative;top:8px;}
 .nav-pills a {color:#030303;font-weight:200;font-size:15px;}
 .nav-pills li:after {content:'';}
@@ -134,13 +134,11 @@ h1 > a {color:#f3c41d !important;font-size:42px !important;font-family:"League G
 #features li a img {margin-bottom:10px;width:174px;}
 #features li a .title {
 	font-family:"League Gothic",sans-serif;
-	color:#f3c41d;
+	color:#e8bc1c;
 	font-size:20px;
 	padding-right:5px;
 	line-height:1.1em;
 	margin-bottom:0;
-	text-shadow: 2px 2px 5px #dedede;
-	letter-spacing: .85px;
 }
 #features li a .description {font-size:12px;}
 
@@ -187,7 +185,7 @@ h1 > a {color:#f3c41d !important;font-size:42px !important;font-family:"League G
 
 /* Footer */
 #footer {border:none;margin-top:30px;margin-bottom:20px;}
-#footer h2 {font-family:"League Gothic",sans-serif;color:#f3c41d;font-size:25px;margin-bottom:15px;font-weight:100 !important;}
+#footer h2 {font-family:"League Gothic",sans-serif;color:#e8bc1c;font-size:25px;margin-bottom:15px;font-weight:100 !important;}
 #footer .left,
 #footer .center,
 #footer .right {height:235px;}
@@ -220,7 +218,7 @@ h1 > a {color:#f3c41d !important;font-size:42px !important;font-family:"League G
 .subpage .page-content .navbar a {color:#FFF;text-shadow:none;font-size:16px;}
 .subpage .page-content .navbar a:hover {text-decoration:underline}
 
-.subpage .page-content .navbar-inner {background-image:none;background-color: #f3c41d;}
+.subpage .page-content .navbar-inner {background-image:none;background-color: #e8bc1c;}
 
 /* Person Picture List */
 .person-picture-list {text-align:center;margin-top:15px;margin-bottom:0px;}
@@ -278,9 +276,9 @@ h1 > a {color:#f3c41d !important;font-size:42px !important;font-family:"League G
 .program-section {}
 	.program-section .title {background-color:rgba(253,223,118,.8);}
 	.ie7 .program-section .title,
-	.ie8 .program-section .title {background-color:#f3c41d}
+	.ie8 .program-section .title {background-color:#e8bc1c}
 	.program-section .title span {
-		background-color:#ffc907;
+		background-color:#e8bc1c;
 		width:285px;
 		display:block;
 		padding-left:15px;
