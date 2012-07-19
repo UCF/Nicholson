@@ -37,7 +37,8 @@ Config::$custom_post_types = array(
 	'FrontPageCenterpiece',
 	'Program',
 	'Person',
-	'Post'
+	'Post',
+	'Document'
 );
 
 Config::$custom_taxonomies = array(
