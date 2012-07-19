@@ -244,6 +244,7 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 	background-color:#FFF;
 	color:#222;
 	box-shadow:  2px 2px 3px 1px rgba(0,0,0,.1);
+	margin-bottom:20px;
 }
 	/* Allow for the program well border and 15px of padding on the right and left */
 	.shadow-well .span12 {width:909px;}
