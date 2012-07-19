@@ -115,27 +115,28 @@ function sc_shadow_well($attrs, $content) {
 }
 add_shortcode('shadow-well', 'sc_shadow_well');
 
-function sc_program_section($attrs, $content) {
+function sc_titled_section($attrs, $content) {
 	if(!isset($attrs['title']) || $attrs['title'] == '') {
 		print 'The `title` attribute is required for the `program-section` shortcode.';
 	} else {
+		$width = isset($attrs['width']) ? $attrs['width'] : '12';
 		$title = $attrs['title'];
 		$id    = sanitize_title($title);
 
 		return sprintf('
-			<div class="program-section" id="%s">
+			<div class="titled-section" id="%s">
 				<div class="row">
-					<div class="span12">
+					<div class="span%s">
 						<h3 class="title"><span>%s</span></h3>
 					</div>
 				</div>
 				<div class="row">
-					<div class="span12">
+					<div class="span%s">
 						%s
 					</div>
 				</div>
-			</div>', $id, $title, do_shortcode($content));
+			</div>', $id, $width, $title, $width, do_shortcode($content));
 	}
 }
-add_shortcode('program-section', 'sc_program_section');
+add_shortcode('titled-section', 'sc_titled_section');
 ?>

@@ -275,12 +275,12 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 	.shadow-well h3 {}
 	.shadow-well p {font-size:17px;font-weight:200;line-height:1.4em;color:#333;margin-right:15px;}
 
-/* Programs */
-.program-section {}
-	.program-section .title {background-color:rgba(253,223,118,.8);}
-	.ie7 .program-section .title,
-	.ie8 .program-section .title {background-color:#fddf70}
-	.program-section .title span {
+/* Titled Section */
+.titled-section {}
+	.titled-section .title {background-color:rgba(253,223,118,.8);}
+	.ie7 .titled-section .title,
+	.ie8 .titled-section .title {background-color:#fddf70}
+	.titled-section .title span {
 		background-color:#e8bc1c;
 		width:285px;
 		display:block;
@@ -289,24 +289,24 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 		letter-spacing:.25px;
 		text-transform: uppercase;
 	}
-	.program-section h4 {
+	.titled-section h4 {
 		font-size:20px;
 		line-height: 35px;
 	}
-	.program-section th {font-weight:normal;font-size:10px;line-height:12px;}
+	.titled-section th {font-weight:normal;font-size:10px;line-height:12px;}
 
-	.program-section .well {
+	.titled-section .well {
 		width:260px;
 		box-shadow:  0 2px 3px 1px rgba(0,0,0,.1);
 		background-color:#FFF;
 	}
-		.program-section .well h4 {font-size:15px;color:#c69601;}
+		.titled-section .well h4 {font-size:15px;color:#c69601;}
 
-	.program-section .table-striped tbody tr:nth-child(odd) td, 
-	.program-section .table-striped tbody tr:nth-child(odd) th {background-color:#FFF;}
+	.titled-section .table-striped tbody tr:nth-child(odd) td, 
+	.titled-section .table-striped tbody tr:nth-child(odd) th {background-color:#FFF;}
 	
-	.program-section .person-picture-list {text-align:left;}
-	.program-section .person-picture-list .title {background-color:#fcf5e0;}
-	.program-section .person-picture-list a,
-	.program-section .person-picture-list .name a,
-	.program-section .person-picture-list .title a {color:#222;}
+	.titled-section .person-picture-list {text-align:left;}
+	.titled-section .person-picture-list .title {background-color:#fcf5e0;}
+	.titled-section .person-picture-list a,
+	.titled-section .person-picture-list .name a,
+	.titled-section .person-picture-list .title a {color:#222;}
