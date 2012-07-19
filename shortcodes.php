@@ -109,10 +109,11 @@ function sc_person_picture_list($attrs) {
 }
 add_shortcode('person-picture-list', 'sc_person_picture_list');
 
-function sc_program_well($attrs, $content) {
-	return sprintf('<div class="row"><div class="span12"><div class="program-well">%s</div></div></div>', do_shortcode($content));
+function sc_shadow_well($attrs, $content) {
+	$width = isset($attrs['width']) ? $attrs['width'] : '12';
+	return sprintf('<div class="row"><div class="span%s"><div class="program-well">%s</div></div></div>', $width, do_shortcode($content));
 }
-add_shortcode('program-well', 'sc_program_well');
+add_shortcode('shadow-well', 'sc_shadow_well');
 
 function sc_program_section($attrs, $content) {
 	if(!isset($attrs['title']) || $attrs['title'] == '') {
