@@ -310,3 +310,16 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 	.titled-section .person-picture-list a,
 	.titled-section .person-picture-list .name a,
 	.titled-section .person-picture-list .title a {color:#222;}
+
+/* Document List */
+.document-list {}
+.document-list > li {margin-bottom:5px;}
+.document-list > li a {color:#333;text-decoration:underline;}
+.document-list li.document {padding-left:25px;background-image:url('static/img/documents/document.png');background-repeat:no-repeat;background-position:top left;}
+.document-list li.powerpoint {background-image:url('static/img/documents/powerpoint.png');}
+.document-list li.pdf {background-image:url('static/img/documents/pdf.png');}
+.document-list li.missing {background-image:url('static/img/documents/missing.png');}
+.document-list li.excel {background-image:url('static/img/documents/excel.png');}
+.document-list li.zip {background-image:url('static/img/documents/zip.png');}
+.document-list li.word {background-image:url('static/img/documents/word.png');}
+.document-list li.html {background-image:url('static/img/documents/html.png');}
