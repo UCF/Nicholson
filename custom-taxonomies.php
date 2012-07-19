@@ -102,6 +102,32 @@ class OrganizationalGroups extends CustomTaxonomy
 		$new_item_name      = 'New Tag Organizational Group',
 
 		$hierarchical = True;
-} // END class 
+} // END class
+
+
+/**
+ * Describes documents groups
+ *
+ * @author Chris Conover
+ **/
+class DocumentGroups extends CustomTaxonomy
+{
+	public
+		$name               = 'doc_groups',
+		$general_name       = 'Document Groups',
+		$singular_name      = 'Document Group',
+		$search_items       = 'Search Document Groups',
+		$popular_items      = 'Popular Document Groups',
+		$all_times          = 'All Document Groups',
+		$parent_item        = 'Parent Document Group',
+		$parent_item_colon  = 'Parent Document Group:',
+		$edit_item          = 'Edit Document Group',
+		$update_item        = 'Update Document Group',
+		$add_new_item       = 'Add New Document Group',
+		$new_item_name      = 'New Tag Document Group',
+
+		$hierarchical = True;
+} // END class
+
 
 ?>

@@ -526,9 +526,10 @@ function sc_object_list($attrs, $options = array()){
 	
 	# get taxonomies and translation
 	$translate  = array(
-		'tags'       => 'post_tag',
-		'categories' => 'category',
-		'org_groups' => 'org_groups'
+		'tags'            => 'post_tag',
+		'categories'      => 'category',
+		'org_groups'      => 'org_groups',
+		'document_groups' => 'doc_groups'
 	);
 	$taxonomies = array_diff(array_keys($attrs), array_keys($default_attrs));
 	
