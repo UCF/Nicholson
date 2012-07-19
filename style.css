@@ -238,16 +238,16 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 .person-profile #details {margin-bottom:20px;}
 .person-profile #details th {padding-bottom:10px;}
 .person-profile #details a {text-decoration: underline;}
-.person-profile .job_title th,
-.person-profile .phones th,
-.person-profile .email th,
-.person-profile .location th,
-.person-profile .cv th {text-indent:-500em;background-position:center left;background-repeat:no-repeat;width:20px;display:block;}
-.person-profile .job_title th {background-image:url('static/img/profiles/title.png');}
-.person-profile .phones th {background-image:url('static/img/profiles/phone.png');}
-.person-profile .email th {background-image:url('static/img/profiles/email.png');}
-.person-profile .location th {background-image:url('static/img/profiles/location.png');}
-.person-profile .cv th {background-image:url('static/img/profiles/cv.png');}
+.person-profile .job_title,
+.person-profile .phones,
+.person-profile .email,
+.person-profile .location,
+.person-profile .cv {background-position:center left;background-repeat:no-repeat;padding-left:35px;height:25px;margin-bottom:7px;}
+.person-profile .job_title {background-image:url('static/img/profiles/title.png');}
+.person-profile .phones {background-image:url('static/img/profiles/phone.png');}
+.person-profile .email {background-image:url('static/img/profiles/email.png');}
+.person-profile .location {background-image:url('static/img/profiles/location.png');}
+.person-profile .cv {background-image:url('static/img/profiles/cv.png');}
 
 /* Shadow Well */
 

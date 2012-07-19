@@ -19,55 +19,36 @@
 				</div>
 				<div class="row">
 					<div class="span8">
-						<table class="table-condensed" id="details">
-							<tbody>
-								<tr class="job_title">
-									<th scope="row">Job Title</th>
-									<td><?=get_post_meta($post->ID, 'person_jobtitle', True)?></td>
-								</tr>
-								<tr class="phones">
-									<th scope="row">Phone(s)</th>
-									<td>
-										<?=get_post_meta($post->ID, 'person_phones', True)?>
-									</td>
-								</tr>
-								<tr class="email">
-									<th scope="row">Email</th>
-									<td>
-										<? $email     = get_post_meta($post->ID, 'person_email', True); ?>
-										<? if($email) {?>
-											<a href="mailto:<?=$email?>"><?=$email?></a>
-										<? } ?>
-									</td>
-								</tr>
-								<tr class="location">
-									<th scope="row">Office Location</th>
-									<td>
-										<? 
-											$office_location_url  = get_post_meta($post->ID, 'person_office_location_url', True);
-											$office_location_text = get_post_meta($post->ID, 'person_office_location_text', True);
-										?>
-										<? if($office_location_url && $office_location_text) {?>
-											<a href="<?=$office_location_url?>"><?=$office_location_text?></a>
-										<? } ?>
-									</td>
-								</tr>
-								<tr class="cv">
-									<th scope="row">Curriculum Vita</th>
-									<td>
-										<? 
-											$cv_url = False;
-											if(($cv_post_id = get_post_meta($post->ID, 'person_cv', True)) && ($cv_post = get_post($cv_post_id))) {
-												$cv_url  = wp_get_attachment_url($cv_post->ID);
-											}
-										?>
-										<? if($cv_url) {?>
-											<a href="<?=$cv_url?>">Curriculum Vita</a>
-										<? } ?>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+						<ul id="details" class="unstyled">
+							<li class="job_title"><?=get_post_meta($post->ID, 'person_jobtitle', True)?></li>
+							<li class="phones"><?=get_post_meta($post->ID, 'person_phones', True)?></li>
+							<li class="email">
+								<? $email     = get_post_meta($post->ID, 'person_email', True); ?>
+								<? if($email) {?>
+									<a href="mailto:<?=$email?>"><?=$email?></a>
+								<? } ?>
+							</li>
+							<li class="location">
+								<? 
+									$office_location_url  = get_post_meta($post->ID, 'person_office_location_url', True);
+									$office_location_text = get_post_meta($post->ID, 'person_office_location_text', True);
+								?>
+								<? if($office_location_url && $office_location_text) {?>
+									<a href="<?=$office_location_url?>"><?=$office_location_text?></a>
+								<? } ?>
+							</li>
+							<li class="cv">
+								<? 
+									$cv_url = False;
+									if(($cv_post_id = get_post_meta($post->ID, 'person_cv', True)) && ($cv_post = get_post($cv_post_id))) {
+										$cv_url  = wp_get_attachment_url($cv_post->ID);
+									}
+								?>
+								<? if($cv_url) {?>
+									<a href="<?=$cv_url?>">Curriculum Vita</a>
+								<? } ?>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<div class="row">
