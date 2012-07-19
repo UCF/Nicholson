@@ -612,21 +612,33 @@ class Person extends CustomPostType
 					'type'    => 'text',
 				),
 				array(
-					'name'    => __('Phone'),
-					'desc'    => __('Separate multiple entries with commas.'),
+					'name'    => __('Phone Number'),
+					'desc'    => __(''),
 					'id'      => $this->options('name').'_phones',
 					'type'    => 'text',
 				),
 				array(
-					'name'    => __('Email'),
+					'name'    => __('Email Address'),
 					'desc'    => __(''),
 					'id'      => $this->options('name').'_email',
 					'type'    => 'text',
 				),
 				array(
-					'name'    => __('Office Location'),
+					'name'    => __('Office Location URL'),
 					'desc'    => __('A URL of a location on the Online Campus Map (e.g. http://map.ucf.edu/?show=1)'),
-					'id'      => $this->options('name').'_office_location',
+					'id'      => $this->options('name').'_office_location_url',
+					'type'    => 'text',
+				),
+				array(
+					'name'    => __('Office Location Text'),
+					'desc'    => __(''),
+					'id'      => $this->options('name').'_office_location_text',
+					'type'    => 'text',
+				),
+				array(
+					'name'    => __('Office Hours'),
+					'desc'    => __(''),
+					'id'      => $this->options('name').'_office_hours',
 					'type'    => 'text',
 				),
 				array(
@@ -659,9 +671,14 @@ class Person extends CustomPostType
 		return $prefix.' '.$name.$suffix;
 	}
 
-	public static function get_phones($person) {
-		$phones = get_post_meta($person->ID, 'person_phones', True);
-		return ($phones != '') ? explode(',', $phones) : array();
+	public static function get_news_posts($person, $limit = null) {
+		return get_posts(
+			array(
+				'numposts'   => is_null($limit) ? 4 : $limit,
+				'meta_key'   => 'post_person',
+				'meta_value' => $person_id
+			)
+		);
 	}
 
 	public function objectsToHTML($people, $css_classes) {

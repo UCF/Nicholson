@@ -111,7 +111,13 @@ add_shortcode('person-picture-list', 'sc_person_picture_list');
 
 function sc_shadow_well($attrs, $content) {
 	$width = isset($attrs['width']) ? $attrs['width'] : '12';
-	return sprintf('<div class="row"><div class="span%s"><div class="shadow-well">%s</div></div></div>', $width, do_shortcode($content));
+	$wrap  = isset($attrs['wrap']) ? (bool)$attrs['wrap'] : True;
+	$gold  = isset($attrs['gold']) ? ' gold' : '';
+	if($wrap) {
+		return sprintf('<div class="row"><div class="span%s"><div class="shadow-well%s">%s</div></div></div>', $width, $gold, do_shortcode($content));
+	} else {
+		return sprintf('<div class="span%s"><div class="shadow-well%s">%s</div></div>', $width, $gold, do_shortcode($content));
+	}
 }
 add_shortcode('shadow-well', 'sc_shadow_well');
 

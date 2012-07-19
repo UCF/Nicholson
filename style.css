@@ -230,11 +230,24 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 
 /* Person Profile */
 .person-profile {}
-.person-profile h2:first-child {font-size:40px;}
-.person-profile .details hr {margin-top:5px;margin-bottom:5px;}
-.person-profile .details img {margin-bottom:5px;}
-.person-profile .details .phones,
-.person-profile .details .email {font-size:12px;word-wrap:break-word;}
+.person-profile #news {margin-top:10px;}
+.person-profile #picture .shadow-well {text-align:center;}
+.person-profile #details,
+.person-profile #name {font-family:Georgia,serif;font-size:15px;}
+.person-profile #name {font-size:30px;font-weight:normal;margin-bottom:20px;}
+.person-profile #details {margin-bottom:20px;}
+.person-profile #details th {padding-bottom:10px;}
+.person-profile #details a {text-decoration: underline;}
+.person-profile .job_title th,
+.person-profile .phones th,
+.person-profile .email th,
+.person-profile .location th,
+.person-profile .cv th {text-indent:-500em;background-position:center left;background-repeat:no-repeat;width:20px;display:block;}
+.person-profile .job_title th {background-image:url('static/img/profiles/title.png');}
+.person-profile .phones th {background-image:url('static/img/profiles/phone.png');}
+.person-profile .email th {background-image:url('static/img/profiles/email.png');}
+.person-profile .location th {background-image:url('static/img/profiles/location.png');}
+.person-profile .cv th {background-image:url('static/img/profiles/cv.png');}
 
 /* Shadow Well */
 
@@ -246,6 +259,10 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 	box-shadow:  2px 2px 3px 1px rgba(0,0,0,.1);
 	margin-bottom:20px;
 }
+	.shadow-well.gold {background-color:#fddf76;}
+	.shadow-well.gold h4 {color:#FFF;font-weight:normal;border-color:#eee1bc;font-size:12px;}
+	.shadow-well.gold p {font-family:Georgia,serif;font-size:15px;margin-bottom:0;}
+
 	/* Allow for the program well border and 15px of padding on the right and left */
 	.shadow-well .span12 {width:909px;}
 	.shadow-well .span11 {width:844px;}
@@ -278,7 +295,7 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 
 /* Titled Section */
 .titled-section {}
-	.titled-section .title {background-color:rgba(253,223,118,.8);}
+	.titled-section .title {background-color:rgba(253,223,118,.8);margin-bottom:20px;}
 	.ie7 .titled-section .title,
 	.ie8 .titled-section .title {background-color:#fddf70}
 	.titled-section .title span {
