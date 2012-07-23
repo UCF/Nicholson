@@ -712,11 +712,7 @@ class Person extends CustomPostType
 							</td> 
 							<td class="phones">
 								<?if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
-									<ul class="unstyled">
-										<? foreach($this->get_phones($person) as $phone) { ?>
-										<li><?=$phone?></li>
-										<? } ?>
-									</ul>
+								<?=get_post_meta($person->ID, 'person_phones', True)?>
 								<?if($link) {?></a><?}?>
 							</td>
 							<td class="email">
