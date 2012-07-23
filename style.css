@@ -231,6 +231,8 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 /* Person Profile */
 .person-profile {}
 .person-profile #news {margin-top:10px;}
+.person-profile #news li {margin-bottom:3px;}
+.person-profile #news a {text-decoration:underline;}
 .person-profile #picture .shadow-well {text-align:center;}
 .person-profile #details,
 .person-profile #name {font-family:Georgia,serif;font-size:15px;}
