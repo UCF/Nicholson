@@ -414,7 +414,7 @@ function get_bootstrap_menu($name, $classes=null, $id=null, $callback=null) {
  * @author Chris Conover
  **/
 function get_featured_image_url($post) {
-	if(has_post_thumbnail($post) && ($thumbnail_id = get_post_thumbnail_id($post->ID)) && ($image = wp_get_attachment_image_src($thumbnail_id))) {
+	if(has_post_thumbnail($post->ID) && ($thumbnail_id = get_post_thumbnail_id($post->ID)) !== False && ($image = wp_get_attachment_image_src($thumbnail_id, 'full')) !== False) {
 		return $image[0];
 	}
 	return False;
