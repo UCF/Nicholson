@@ -676,7 +676,7 @@ class Person extends CustomPostType
 			array(
 				'numposts'   => is_null($limit) ? 4 : $limit,
 				'meta_key'   => 'post_person',
-				'meta_value' => $person_id
+				'meta_value' => $person->ID
 			)
 		);
 	}
