@@ -60,9 +60,14 @@
 			</div>
 		</div>
 		<? 
-			$news_posts = '';
-			foreach(Person::get_news_posts($post) as $news_post) {
-				$news_posts .= '<li><a href="'.get_permalink($news_post->ID).'">'.$news_post->post_title.'</a></li>';
+			$news_posts_content = '';
+			$news_posts         = Person::get_news_posts($post);
+			if(count($news_posts) > 0) {
+				$news_posts_content = '<h3>News</h3><ul class="unstyled" id="news">';
+				foreach($news_posts as $news_post) {
+					$news_posts_content .= '<li><a href="'.get_permalink($news_post->ID).'">'.$news_post->post_title.'</a></li>';
+				}
+				$news_posts_content .= '</ul>';
 			}
 		?>
 		<?= sc_titled_section(
@@ -72,10 +77,7 @@
 				.'</div><div class="span3 offset1">
 					<div class="row">
 						<div class="span3">
-							<h3>News</h3>
-							<ul class="unstyled" id="news">
-								'.$news_posts.'
-							</ul>
+							'.$news_posts_content.'
 						</div>
 					</div>
 				</div></div>'
