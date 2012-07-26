@@ -419,4 +419,31 @@ function get_featured_image_url($post) {
 	}
 	return False;
 }
+
+/**
+ * Remove some unused menus in the dashboard.
+ *
+ * @author Chris Conover
+ **/
+function remove_menus() {
+	global $menu;
+
+	$removals = array('Links', 'Comments');
+
+	reset($menu);
+	while(next($menu)) {
+		$item = current($menu);
+		if(isset($item[0]) && $item[0] != '') {
+			foreach($removals as $removal) {
+				// Comments needs special handling for some reason
+				if($removal == 'Comments' && stripos($item[0], 'Comments') === 0) {
+					unset($menu[key($menu)]);
+				} else if($item[0] == $removal) {
+					unset($menu[key($menu)]);
+				}
+			}
+		}
+	}
+}
+add_action('admin_menu', 'remove_menus');
 ?>
