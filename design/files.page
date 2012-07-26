@@ -1,0 +1,33 @@
+[shadow-well]
+<p>Forms and paperrwork are a fact of university life. Nicholson students will need to fill out a variety of forms over the course of their time at UCF. Below are categorized lists of documents and forms that students may need while 
+at the Nicholson School.</p>
+
+<p>More copy about forms, who to contact, or more information.</p>
+[/shadow-well]
+<div class="row">
+	<div class="span4">
+		[titled-section width="4" title="General Files and Forms"][document-list document_groups="general-files-and-forms"][/titled-section]
+	</div>
+	<div class="span4">
+		[titled-section width="4" title="Graduate Files and Forms"][document-list document_groups="graduate-files-and-forms"][/titled-section]
+	</div>
+	<div class="span4">
+		[titled-section width="4" title="Advertising &amp; Public Relations"][document-list document_groups="advertising-and-public-relations"][/titled-section]
+	</div>
+</div>
+<div class="row">
+	<div class="span4">
+		[titled-section width="4" title="Interpersonal &mdash; Organizational"][document-list document_groups="interpersonal-organizational"][/titled-section]
+	</div>
+	<div class="span4">
+		[titled-section width="4" title="Journalism"][document-list document_groups="journalism"][/titled-section]
+	</div>
+	<div class="span4">
+		[titled-section width="4" title="Radio &mdash; Television"][document-list document_groups="radio-television"][/titled-section]
+	</div>
+</div>
+<div class="row">
+	<div class="span4">
+		[titled-section width="4" title="Useful Links"][document-list document_groups="useful-links"][/titled-section]
+	</div>
+</div>
