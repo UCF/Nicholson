@@ -51,12 +51,15 @@
 						</ul>
 					</div>
 				</div>
+				<? $office_hours = get_post_meta($post->ID, 'person_office_hours', True); ?>
+				<? if($office_hours != '') { ?>
 				<div class="row">
 					<?=sc_shadow_well(
 						array('wrap'=>False, 'width'=>3, 'gold'=>True),
 						'<h4>OFFICE HOURS</h4><p>'.get_post_meta($post->ID, 'person_office_hours', True).'</p>'
 					);?>
 				</div>
+				<? } ?>
 			</div>
 		</div>
 		<? 
