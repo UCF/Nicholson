@@ -414,11 +414,26 @@ function get_bootstrap_menu($name, $classes=null, $id=null, $callback=null) {
  * @author Chris Conover
  **/
 function get_featured_image_url($post) {
-	if(has_post_thumbnail($post->ID) && ($thumbnail_id = get_post_thumbnail_id($post->ID)) !== False && ($image = wp_get_attachment_image_src($thumbnail_id, 'full')) !== False) {
+	if( ($thumbnail = get_featured_image($post)) !== False && ($image = wp_get_attachment_image_src($thumbnail->ID, 'full')) !== False) {
 		return $image[0];
 	}
 	return False;
 }
+
+/**
+ * Return featured image post
+ *
+ * @return object/false
+ * @author Chris Conover
+ **/
+function get_featured_image($post) {
+	if(has_post_thumbnail($post->ID) && ($thumbnail_id = get_post_thumbnail_id($post->ID)) !== False && ($post = get_post($thumbnail_id)) !== False) {
+		return $post;
+	}
+	return False;
+}
+
+
 
 /**
  * Remove some unused menus in the dashboard.
