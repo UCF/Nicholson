@@ -371,7 +371,7 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 /* Single Post */
 .single {}
 .single #below-the-fold {margin-top:50px;}
-.single .caption {font-weight:bold;}
+.single .caption {font-weight:bold;margin-bottom:0;}
 .single .featured_image {margin-bottom:15px;}
 .single .quote {font-size:25px;line-height:1.5em;margin-top:10px;margin-bottom:10px;}
 .single .additional_image {margin-top:15px;}
