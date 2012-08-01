@@ -535,5 +535,41 @@ function get_additional_image($post) {
 	return False;
 }
 
+/**
+ * 
+ * Pagination details based on passed parameters
+ *
+ * @return array
+ * @author Chris Conover
+ **/
+function get_pagination_details($params = array(), $page_size = 10) {
+	
+	if(!isset($_GET['page']) || !is_int($_GET['page']) || $page < 1) {
+		$page = 1;
+	} else {
+		$page = (int)$_GET['page'];
+	}
+	$offset    = ($page - 1) * $page_size;
+	
+	# All the posts
+	$params['numposts'] = -1;
+	$all_posts = get_posts($params);
 
+	# Posts for this page
+	$params['numposts'] = $page_size;
+	$params['offset']   = $offset;
+
+	$num_pages     = (int)ceil(count($all_posts) / $page_size);
+	$has_next      = (($page + 1) > $num_pages) ? False : True;
+	$has_previous  = ($page > 1) ? True : False;
+
+	return array(
+		'page'         => $page,
+		'offset'       => $offset,
+		'page_size'    => $page_size,
+		'num_pages'    => $num_pages,
+		'has_next'     => $has_next,
+		'has_previous' => $has_previous
+	);
+}
 ?>
