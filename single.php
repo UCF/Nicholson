@@ -8,7 +8,7 @@
 				<?=$content = str_replace(']]>', ']]>', apply_filters('the_content', $post->post_content))?>
 			</div>
 			<div class="span4 offset1">
-				<div class="row">
+				<div class="row featured_image">
 					<div class="span4">
 						<? if( ($featured_image = get_featured_image($post)) !== False && ($featured_image_url = get_featured_image_url($post->ID)) !== False) { ?>
 						<img src="<?=$featured_image_url?>" />
@@ -28,7 +28,7 @@
 				</div>
 				<? } ?>
 				<? if( ($additional_image = get_additional_image($post)) !== False && ($additional_image_url = wp_get_attachment_image_src($additional_image->ID, 'full')) !== False) { ?>
-				<div class="row">
+				<div class="row additional_image">
 					<div class="span4">
 						<img src="<?=$additional_image_url[0]?>" />
 						<? if($additional_image->post_excerpt != '') { ?>
