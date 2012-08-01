@@ -768,6 +768,12 @@ class Post extends CustomPostType
 				'type'    => 'select',
 				'options' => $person_options
 			),
+			array(
+				'name'    => __('Quote'),
+				'desc'    => 'Optional. A particularly good quote that, if provided, will appear on the right column of the article page.',
+				'id'      => $this->options('name').'_quote',
+				'type'    => 'textarea',
+			)
 		);
 	}
 
