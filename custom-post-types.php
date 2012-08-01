@@ -770,7 +770,7 @@ class Post extends CustomPostType
 			),
 			array(
 				'name'    => __('Quote'),
-				'desc'    => 'Optional. A particularly good quote that, if provided, will appear on the right column of the article page.',
+				'desc'    => 'Optional. A particularly good quote that, if provided, will appear on the right column of the article page.<br />Enclosing quotes will be automatically added.',
 				'id'      => $this->options('name').'_quote',
 				'type'    => 'textarea',
 			)
