@@ -526,11 +526,13 @@ function sc_object_list($attrs, $options = array()){
 		return '<p class="error">Invalid post type.</p>';
 	}
 	
+	$class = new $class;
+
 	# Use post type specified ordering?
-	if(!isset($params['orderby']) && !is_null($class->default_orderby)) {
+	if(!isset($attrs['orderby']) && !is_null($class->default_orderby)) {
 		$params['orderby'] = $class->orderby;
 	}
-	if(!isset($params['order']) && !is_null($class->default_order)) {
+	if(!isset($attrs['order']) && !is_null($class->default_order)) {
 		$params['order'] = $class->default_order;
 	}
 
@@ -574,7 +576,6 @@ function sc_object_list($attrs, $options = array()){
 	);
 
 	$query = new WP_Query($query_array);
-	$class = new $class;
 	
 	global $post;
 	$objects = array();
