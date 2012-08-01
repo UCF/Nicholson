@@ -365,3 +365,4 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 }
 .post-item > .when,
 .post-item > .under {color:#00625a;font-size:11px;line-height:1.4em}
+.post-item > .under a {color:#00625a;text-decoration:underline;}

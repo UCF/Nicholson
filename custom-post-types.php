@@ -804,13 +804,13 @@ class Post extends CustomPostType
 				<? 
 				foreach($column as $post) { setup_postdata($post); 
 					$featured_image_url = get_featured_image_url($post);
-					$category_names     = array();
+					$category_links     = array();
 					foreach(wp_get_post_categories($post->ID) as $id) {
 						# Use get_term_by because other functions have stupid
 						# return values if the term doesn't exist
 						$category = get_term_by('id', $id, 'category');
 						if($category !== False) {
-							$category_names[] = $category->name;
+							$category_links[] = '<a href="'.get_category_link($id).'">'.esc_html($category->name).'</a>';
 						}
 					}
 				?>
@@ -823,7 +823,7 @@ class Post extends CustomPostType
 						<p><?=get_the_excerpt();?></p>
 						<div class="when">Posted: <?=the_time('F j, Y')?></div>
 						<div class="under">
-							Filed Under: <?=implode(', ', $category_names);?>
+							Filed Under: <?=implode(', ', $category_links);?>
 						</div>
 					</div>
 				</div>
