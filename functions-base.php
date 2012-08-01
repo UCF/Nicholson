@@ -503,10 +503,12 @@ function sc_object_list($attrs, $options = array()){
 
 	# set defaults and combine with passed arguments
 	$default_attrs = array(
-		'type'  => null,
-		'limit' => -1,
-		'join'  => 'or',
-		'class' => '',
+		'type'    => null,
+		'limit'   => -1,
+		'join'    => 'or',
+		'class'   => '',
+		'orderby' => 'menu_order title',
+		'order'   => 'ASC'
 	);
 	$params = array_merge($default_attrs, $attrs);
 	
@@ -559,8 +561,8 @@ function sc_object_list($attrs, $options = array()){
 		'post_status'    => 'publish',
 		'post_type'      => $params['type'],
 		'posts_per_page' => $params['limit'],
-		'orderby'        => 'menu_order title',
-		'order'          => 'ASC',
+		'orderby'        => $params['orderby'],
+		'order'          => $params['order'],
 	);
 
 	$query = new WP_Query($query_array);
