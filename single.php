@@ -8,16 +8,16 @@
 				<?=$content = str_replace(']]>', ']]>', apply_filters('the_content', $post->post_content))?>
 			</div>
 			<div class="span4 offset1">
+				<? if( ($featured_image = get_featured_image($post)) !== False && ($featured_image_url = get_featured_image_url($post->ID)) !== False) { ?>
 				<div class="row featured_image">
 					<div class="span4">
-						<? if( ($featured_image = get_featured_image($post)) !== False && ($featured_image_url = get_featured_image_url($post->ID)) !== False) { ?>
 						<img src="<?=$featured_image_url?>" />
 						<? if($featured_image->post_excerpt != '') { ?>
 						<p class="caption"><?=$featured_image->post_excerpt?></p>
 						<? } ?>
-						<? } ?>
 					</div>
 				</div>
+				<? } ?>
 				<? if(($quote = get_post_meta($post->ID, 'post_quote', True)) !== '') { ?>
 				<div class="row">
 					<div class="span4">
