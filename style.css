@@ -351,11 +351,12 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 	padding-bottom:15px;
 	box-shadow:2px 2px 2px 1px rgba(0,0,0,.1);
 }
-.post-item > h4,
-.post-item > p,
-.post-item > .when,
-.post-item > .under {padding-left:15px;padding-right:15px;}
-.post-item > h4 {
+.post-item a {color:#000;text-decoration:none;}
+.post-item  h4,
+.post-item  p,
+.post-item  .when,
+.post-item  .under {padding-left:15px;padding-right:15px;}
+.post-item  h4 {
 	font-family:"League Gothic","Helvetica Neue",sans-serif;
 	font-size:23px;
 	font-weight:normal;
@@ -363,6 +364,6 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 	margin-bottom:5px;
 	line-height:1.2em;
 }
-.post-item > .when,
-.post-item > .under {color:#00625a;font-size:11px;line-height:1.4em}
-.post-item > .under a {color:#00625a;text-decoration:underline;}
+.post-item  .when,
+.post-item  .under {color:#00625a;font-size:11px;line-height:1.4em}
+.post-item  .under a {color:#00625a;text-decoration:underline;}

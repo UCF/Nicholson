@@ -816,12 +816,14 @@ class Post extends CustomPostType
 				?>
 				<div class="row">
 					<div class="span4 post-item">
-						<? if($featured_image_url !== False) {?>
-						<img src="<?=$featured_image_url?>" />
-						<? } ?>
-						<h4><?=get_the_title();?></h4>
-						<p><?=get_the_excerpt();?></p>
-						<div class="when">Posted: <?=the_time('F j, Y')?></div>
+						<a href="<?=get_permalink($post->ID);?>">
+							<? if($featured_image_url !== False) {?>
+							<img src="<?=$featured_image_url?>" />
+							<? } ?>
+							<h4><?=get_the_title();?></h4>
+							<p><?=get_the_excerpt();?></p>
+							<div class="when">Posted: <?=the_time('F j, Y')?></div>
+						</a>
 						<div class="under">
 							Filed Under: <?=implode(', ', $category_links);?>
 						</div>
