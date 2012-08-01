@@ -370,6 +370,7 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 
 /* Single Post */
 .single {}
+.single h3 {font-size:25px;line-height: 1.2em;margin-bottom:15px;}
 .single #below-the-fold {margin-top:50px;}
 .single .caption {font-weight:bold;margin-bottom:0;}
 .single .featured_image {margin-bottom:15px;}
