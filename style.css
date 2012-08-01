@@ -343,3 +343,26 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 .document-list li.zip {background-image:url('static/img/documents/zip.png');}
 .document-list li.word {background-image:url('static/img/documents/word.png');}
 .document-list li.html {background-image:url('static/img/documents/html.png');}
+
+/* Post Item */
+.post-item {
+	background-color:#FFF;
+	margin-bottom:20px;
+	padding-bottom:15px;
+	box-shadow:2px 2px 2px 1px rgba(0,0,0,.1);
+}
+.post-item > h4,
+.post-item > p,
+.post-item > .when,
+.post-item > .under {padding-left:15px;padding-right:15px;}
+.post-item > h4 {
+	font-family:"League Gothic","Helvetica Neue",sans-serif;
+	font-size:23px;
+	font-weight:normal;
+	margin-top:10px;
+	margin-bottom:5px;
+	letter-spacing: .75px;
+	line-height:1.2em;
+}
+.post-item > .when,
+.post-item > .under {color:#00625a;font-size:11px;line-height:1.4em}

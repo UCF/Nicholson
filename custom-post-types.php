@@ -748,6 +748,7 @@ class Post extends CustomPostType
 		$use_order      = True,
 		$use_title      = True,
 		$use_metabox    = True,
+		$use_shortcode  = True,
 		$taxonomies     = Array('people', 'post_tag', 'category'),
 		$built_in       = True;
 
@@ -768,6 +769,71 @@ class Post extends CustomPostType
 				'options' => $person_options
 			),
 		);
+	}
+
+	public function objectsToHTML($objects, $css_classes) {
+		global $post;
+
+		# Sort the objects into 3 columns
+		$column_1 = array();
+		$column_2 = array();
+		$column_3 = array();
+
+		$index = 1;
+		foreach($objects as $object) {
+			switch($index) {
+				case 1:
+					$column_1[] = $object;
+					$index++;
+					break;
+				case 2:
+					$column_2[] = $object;
+					$index++;
+					break;
+				case 3:
+					$column_3[] = $object;
+					$index = 1;
+					break;
+			}
+		}
+
+		ob_start();?>
+		<div class="row">
+			<? foreach(array($column_1, $column_2, $column_3) as $column) { ?>
+			<div class="span4">
+				<? 
+				foreach($column as $post) { setup_postdata($post); 
+					$featured_image_url = get_featured_image_url($post);
+					$category_names     = array();
+					foreach(wp_get_post_categories($post->ID) as $id) {
+						# Use get_term_by because other functions have stupid
+						# return values if the term doesn't exist
+						$category = get_term_by('id', $id, 'category');
+						if($category !== False) {
+							$category_names[] = $category->name;
+						}
+					}
+				?>
+				<div class="row">
+					<div class="span4 post-item">
+						<? if($featured_image_url !== False) {?>
+						<img src="<?=$featured_image_url?>" />
+						<? } ?>
+						<h4><?=get_the_title();?></h4>
+						<p><?=get_the_excerpt();?></p>
+						<div class="when">Posted: <?=the_time('F j, Y')?></div>
+						<div class="under">
+							Filed Under: <?=implode(', ', $category_names);?>
+						</div>
+					</div>
+				</div>
+				<? } ?>
+			</div>
+			<? } ?>
+		</div>
+		<?
+		wp_reset_postdata();
+		return ob_get_clean();
 	}
 }
 
