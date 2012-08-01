@@ -461,4 +461,57 @@ function remove_menus() {
 	}
 }
 add_action('admin_menu', 'remove_menus');
+
+/**
+ * Get the previous chronological post's URL
+ *
+ * @return string/false
+ * @author Chris Conover
+ **/
+function get_previous_post_url($post) {
+	$url = False;
+
+	function previous_date_where($where = '') {
+		global $post;
+		$where .= " AND post_date < '$post->post_date'";
+		return $where;
+	}
+
+	add_filter('posts_where', 'previous_date_where');
+	$query = new WP_Query(array('post_type' => 'post', 'orderby' => 'date', 'order'=>'DESC'));
+	remove_filter('posts_where', 'previous_date_where');
+	if($query->have_posts()) {
+		$query->the_post();
+		$url = get_permalink();
+	}
+	wp_reset_postdata();
+	return $url;
+}
+
+/**
+ * Get the next chronological post's URL
+ *
+ * @return string/false
+ * @author Chris Conover
+ **/
+function get_next_post_url($post) {
+	$url = False;
+
+	function next_date_where($where = '') {
+		global $post;
+		$where .= " AND post_date > '$post->post_date'";
+		return $where;
+	}
+
+	add_filter('posts_where', 'next_date_where');
+	$query = new WP_Query(array('post_type' => 'post', 'orderby' => 'date', 'order'=>'ASC'));
+	remove_filter('posts_where', 'next_date_where');
+	if($query->have_posts()) {
+		$query->the_post();
+		$url = get_permalink();
+	}
+	wp_reset_postdata();
+	return $url;
+}
+
 ?>

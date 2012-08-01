@@ -370,5 +370,27 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 
 /* Single Post */
 .single {}
+.single #below-the-fold {margin-top:50px;}
 .single .caption {font-weight:bold;}
 .single .quote {font-size:25px;line-height:1.5em}
+.single .previous,
+.single .next {
+	color:#000;
+	text-transform:uppercase;
+	font-weight:bold;
+	background-repeat:no-repeat;
+	font-size:11px;
+}
+.single .previous-next {
+	margin-top:20px;
+}
+.single .previous {
+	background-image: url(static/img/previous.png);
+	background-position:center left;
+	padding-left:25px;
+}
+.single .next {
+	background-image: url(static/img/next.png);
+	background-position:center right;
+	padding-right:25px;
+}

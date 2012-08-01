@@ -29,6 +29,18 @@
 				<? } ?>
 			</div>
 		</div>
+		<div class="row previous-next">
+			<div class="span7">
+				<? $previous_url = get_previous_post_url($post); ?>
+				<? $next_url     = get_next_post_url($post); ?>
+				<? if($previous_url != False) { ?>
+					<a href="<?=$previous_url?>" class="previous pull-left">Previous Article</a>
+				<? } ?>
+				<? if($next_url != False) { ?>
+					<a href="<?=$next_url?>" class="next pull-right">Next Article</a>
+				<? } ?>
+			</div>
+		</div>
 		<?php get_template_part('includes/below-the-fold'); ?>
 	</div>
 <?php get_footer();?>
