@@ -408,9 +408,9 @@ function get_bootstrap_menu($name, $classes=null, $id=null, $callback=null) {
 }
 
 /**
- * Get menu and format for bootstrap
+ * Return featured image url if it exists, otherwise false
  *
- * @return array
+ * @return string/false
  * @author Chris Conover
  **/
 function get_featured_image_url($post) {
