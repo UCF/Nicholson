@@ -526,6 +526,14 @@ function sc_object_list($attrs, $options = array()){
 		return '<p class="error">Invalid post type.</p>';
 	}
 	
+	# Use post type specified ordering?
+	if(!isset($params['orderby']) && !is_null($class->default_orderby)) {
+		$params['orderby'] = $class->orderby;
+	}
+	if(!isset($params['order']) && !is_null($class->default_order)) {
+		$params['order'] = $class->default_order;
+	}
+
 	# get taxonomies and translation
 	$translate  = array(
 		'tags'            => 'post_tag',
