@@ -74,6 +74,14 @@ function sc_search_form() {
 }
 add_shortcode('search_form', 'sc_search_form');
 
+/**
+ * Person-list with a list format including pictures
+ * instead of a table format. If the person has no profile
+ * picture, a default piture will be outputted instead.
+ * 
+ * @author Chris Conover
+ * @return string
+ **/
 function sc_person_picture_list($attrs) {
 	$attrs['type'] = 'person';
 	$row_size      = isset($attrs['row-size']) ? (int)$attrs['row-size'] : 5;
@@ -109,6 +117,15 @@ function sc_person_picture_list($attrs) {
 }
 add_shortcode('person-picture-list', 'sc_person_picture_list');
 
+/**
+ * Wraps the specified content in the shadow-well CSS class.
+ * width - optional - in columns. default to 12
+ * wrap - optional - include row wrapper
+ * gold - optional - add gold CSS class
+ *
+ * @author Chris Conover
+ * @return string
+ **/
 function sc_shadow_well($attrs, $content) {
 	$width = isset($attrs['width']) ? $attrs['width'] : '12';
 	$wrap  = isset($attrs['wrap']) ? (bool)$attrs['wrap'] : True;
@@ -121,6 +138,16 @@ function sc_shadow_well($attrs, $content) {
 }
 add_shortcode('shadow-well', 'sc_shadow_well');
 
+/**
+ * Wrap the specified content in the titled-section CSS class.
+ * title - required - title of the section
+ * width - optional - default 
+ * The CSS id of the wrapping div will be the sluggified version of 
+ * the title.
+ *
+ * @author Chris Conover
+ * @return string
+**/
 function sc_titled_section($attrs, $content) {
 	if(!isset($attrs['title']) || $attrs['title'] == '') {
 		print 'The `title` attribute is required for the `program-section` shortcode.';
