@@ -514,4 +514,26 @@ function get_next_post_url($post) {
 	return $url;
 }
 
+
+/**
+ * Returns the object of an additional image attached to a post
+ * if the image is not the not designated as the featured image. Otherwise false
+ *
+ * @return string/false
+ * @author Chris Conover
+ **/
+function get_additional_image($post) {
+	if( ($featured_image = get_featured_image($post)) !== False ) {
+		$attachments = get_posts(array('numposts'=>-1, 'post_type'=>'attachment', 'post_parent'=>$post->ID));
+
+		foreach($attachments as $attachment) {
+			if($attachment->ID != $featured_image->ID && strpos($attachment->post_mime_type, 'image/') == 0) {
+				return $attachment;
+			}
+		}
+	}
+	return False;
+}
+
+
 ?>

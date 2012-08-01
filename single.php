@@ -27,6 +27,16 @@
 					</div>
 				</div>
 				<? } ?>
+				<? if( ($additional_image = get_additional_image($post)) !== False && ($additional_image_url = wp_get_attachment_image_src($additional_image->ID, 'full')) !== False) { ?>
+				<div class="row">
+					<div class="span4">
+						<img src="<?=$additional_image_url[0]?>" />
+						<? if($additional_image->post_excerpt != '') { ?>
+						<p class="caption"><?=$additional_image->post_excerpt?></p>
+						<? } ?>
+					</div>
+				</div>
+				<? } ?>
 			</div>
 		</div>
 		<div class="row previous-next">
