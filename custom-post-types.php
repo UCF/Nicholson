@@ -754,7 +754,10 @@ class Post extends CustomPostType
 		$use_metabox    = True,
 		$use_shortcode  = True,
 		$taxonomies     = Array('people', 'post_tag', 'category'),
-		$built_in       = True;
+		$built_in       = True,
+
+		$default_orderby = 'date',
+		$default_order   = 'DESC' ;
 
 	public function fields() {
 
