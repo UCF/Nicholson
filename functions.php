@@ -572,4 +572,40 @@ function get_pagination_details($params = array(), $page_size = 9) {
 		'has_previous' => $has_previous
 	);
 }
+
+/**
+ *
+ * Get Post post type archive years 
+ *
+ * @return array
+ * @author Chris Conover
+ **/
+function get_archive_years(){
+
+	#Fetch post dates for objects in this category
+	global $wpdb;
+
+	$sql  = "
+		SELECT DISTINCT post.post_date
+		FROM $wpdb->posts post
+		WHERE
+			post.post_type = 'post'
+			AND post.post_status = 'publish'";
+	$rows = $wpdb->get_results($sql);
+	
+	#Find unique years and return
+	$years = array();
+	foreach ($rows as $row){
+		$date = $row->post_date;
+		$year = date("Y", strtotime($date));
+		$years[] = $year;
+	}
+	if (count($years)){
+		rsort($years);
+		$years = array_unique($years);
+		return $years;
+	}else{
+		return array();
+	}
+}
 ?>
