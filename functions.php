@@ -542,7 +542,7 @@ function get_additional_image($post) {
  * @return array
  * @author Chris Conover
  **/
-function get_pagination_details($params = array(), $page_size = 10) {
+function get_pagination_details($params = array(), $page_size = 9) {
 	
 	if(!isset($_GET['page']) || !is_numeric($_GET['page']) || (int)$_GET['page'] < 1) {
 		$page = 1;
