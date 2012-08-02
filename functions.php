@@ -544,7 +544,7 @@ function get_additional_image($post) {
  **/
 function get_pagination_details($params = array(), $page_size = 10) {
 	
-	if(!isset($_GET['page']) || !is_int($_GET['page']) || $page < 1) {
+	if(!isset($_GET['page']) || !is_numeric($_GET['page']) || (int)$_GET['page'] < 1) {
 		$page = 1;
 	} else {
 		$page = (int)$_GET['page'];

@@ -10,14 +10,13 @@
 						array('tax_query'=>
 							array(
 								'taxonomy'=>'category',
-								'field'=>'slug',
-								'terms'=> $wp_query->queried_object->slug
+								'field'   =>'slug',
+								'terms'   => $wp_query->queried_object->slug
 							)
-						),
-						2
+						)
 					);
 				?>
-				<? if($pagination_details['num_pages'] > 0) { ?>
+				<? if($pagination_details['num_pages'] > 1) { ?>
 				<div class="pagination pull-right">
 					<ul>
 						<? if($pagination_details['has_previous']) { ?>
@@ -35,11 +34,12 @@
 		<div class="row">
 			<div class="span12">
 				<?
-					var_dump($pagination_details);
 					echo sc_object_list(
 						array(
 							'categories'  =>$wp_query->queried_object->slug,
-							'type'        =>'post')
+							'type'        =>'post',
+							'limit'       => $pagination_details['page_size'],
+							'offset'      => $pagination_details['offset'])
 					);
 				?>
 			</div>

@@ -508,7 +508,8 @@ function sc_object_list($attrs, $options = array()){
 		'join'    => 'or',
 		'class'   => '',
 		'orderby' => 'menu_order title',
-		'order'   => 'ASC'
+		'order'   => 'ASC',
+		'offset'  => 0
 	);
 	$params = array_merge($default_attrs, $attrs);
 	
@@ -573,6 +574,7 @@ function sc_object_list($attrs, $options = array()){
 		'posts_per_page' => $params['limit'],
 		'orderby'        => $params['orderby'],
 		'order'          => $params['order'],
+		'offset'         => $params['offset']
 	);
 
 	$query = new WP_Query($query_array);
