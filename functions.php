@@ -542,8 +542,9 @@ function get_additional_image($post) {
  * @return array
  * @author Chris Conover
  **/
-function get_pagination_details($params = array(), $page_size = 9) {
-	
+function get_pagination_details($params = array(), $page_size = 9, $filter = null) {
+	global $post;
+
 	if(!isset($_GET['page']) || !is_numeric($_GET['page']) || (int)$_GET['page'] < 1) {
 		$page = 1;
 	} else {
@@ -553,7 +554,19 @@ function get_pagination_details($params = array(), $page_size = 9) {
 	
 	# All the posts
 	$params['numposts'] = -1;
-	$all_posts = get_posts($params);
+	if(function_exists($filter)) {
+		add_filter('posts_where', $filter);
+	}
+	$query = new WP_Query($params);
+	if(function_exists($filter)) {
+		add_filter('posts_where', $filter);
+	}
+	$all_posts = array();
+	while($query->have_posts()) {
+		$query->the_post();
+		$all_posts[] = $post;
+	}
+	wp_reset_postdata();
 
 	# Posts for this page
 	$params['numposts'] = $page_size;

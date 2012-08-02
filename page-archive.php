@@ -37,26 +37,27 @@
 								'terms'   => $wp_query->queried_object->slug
 							),
 						),
-						2
+						2,
+						'archive_where'
 					);
 				?>
-				<? if($pagination_details['num_pages'] > 1) { ?>
 				<div class="pagination pull-right">
+					<? if($pagination_details['num_pages'] > 1) { ?>
 					<ul>
 						<? if($pagination_details['has_previous']) { ?>
-						<li><a href="?page=<?=$pagination_details['page'] - 1?>&amp;y=<?=$_GET['year']?>">Prev</a></li>
+						<li><a href="?page=<?=$pagination_details['page'] - 1?>&amp;y=<?=$_GET['y']?>">Prev</a></li>
 						<? } ?>
 						<? if($pagination_details['has_next']) { ?>
-						<li><a href="?page=<?=$pagination_details['page'] + 1?>&amp;y=<?=$_GET['year']?>">Next</a></li>
+						<li><a href="?page=<?=$pagination_details['page'] + 1?>&amp;y=<?=$_GET['y']?>">Next</a></li>
 						<? } ?>
 						<li class="status"><a><?=$pagination_details['page']?> of <?=$pagination_details['num_pages']?></a></li>
 					</ul>
+					<? } ?>
 				</div>
-				<? } ?>
 			</div>
 			<div class="span3">
-				<form class="form-horizontal" style="margin-top:18px;" action="." method="get">
-					<select class="input-small" name="year">
+				<form class="form-horizontal pull-right" style="margin-top:18px;" action="." method="get">
+					<select class="input-small" name="y">
 						<? foreach($archive_years as $year) { ?>
 						<option value="<?=$year?>"<?=$specific_year == $year ? ' selected="selected"':''?>>
 							<?=$year?>
@@ -70,15 +71,13 @@
 		<div class="row">
 			<div class="span12">
 				<?
-					ob_start();
-					sc_object_list(
+					$content = sc_object_list(
 						array(
 							'categories'  =>$wp_query->queried_object->slug,
 							'type'        =>'post',
 							'limit'       => $pagination_details['page_size'],
 							'offset'      => $pagination_details['offset'])
 					);
-					$content = ob_get_clean();
 					if($content == '') {?>
 						<p><strong>There are no archived posts for this year</strong></p>
 					<? } else { ?>
