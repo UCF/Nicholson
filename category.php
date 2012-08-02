@@ -13,8 +13,7 @@
 								'field'   =>'slug',
 								'terms'   => $wp_query->queried_object->slug
 							),
-						),
-						2
+						)
 					);
 				?>
 				<? if($pagination_details['num_pages'] > 1) { ?>
