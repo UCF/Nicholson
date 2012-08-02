@@ -3,7 +3,7 @@
 
 <?php get_header(); the_post();?>
 	<div class="page-content" id="page-not-found">
-		<div class="span-18">
+		<div class="span12">
 			<h1>Page Not Found</h1>
 			<?php 
 				$page = get_page_by_title('404');
@@ -18,10 +18,6 @@
 			<?php else:?>
 			<p>The page you requested doesn't exist.  Sorry about that.</p>
 			<?php endif;?>
-		</div>
-		
-		<div id="sidebar" class="span-6 last">
-			<?=get_sidebar();?>
 		</div>
 		
 		<div class="clear"><!-- --></div>
