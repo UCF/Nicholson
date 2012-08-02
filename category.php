@@ -12,8 +12,9 @@
 								'taxonomy'=>'category',
 								'field'   =>'slug',
 								'terms'   => $wp_query->queried_object->slug
-							)
-						)
+							),
+						),
+						2
 					);
 				?>
 				<? if($pagination_details['num_pages'] > 1) { ?>
@@ -25,7 +26,7 @@
 						<? if($pagination_details['has_next']) { ?>
 						<li><a href="?page=<?=$pagination_details['page'] + 1?>">Next</a></li>
 						<? } ?>
-						<li><a><?=$pagination_details['page']?> of <?=$pagination_details['num_pages']?></a></li>
+						<li class="status"><a><?=$pagination_details['page']?> of <?=$pagination_details['num_pages']?></a></li>
 					</ul>
 				</div>
 				<? } ?>

@@ -397,3 +397,9 @@ h1 > a {color:#e8bc1c !important;font-size:42px !important;font-family:"League G
 	background-position:center right;
 	padding-right:25px;
 }
+
+/* Pagination */
+.pagination {}
+.pagination a {font-size:12px;color:#333;padding:0 8px;line-height:27px}
+.pagination .status a {background-color:#e3ddca;}
+.pagination a:hover {background-color:#e3ddca;}
