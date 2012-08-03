@@ -253,16 +253,39 @@ Config::$theme_settings = array(
 		new TextField(array(
 			'name'        => 'Facebook URL',
 			'id'          => THEME_OPTIONS_NAME.'[facebook_url]',
-			'description' => 'URL to the facebook page you would like to direct visitors to.  Example: <em>https://www.facebook.com/CSBrisketBus</em>',
-			'default'     => null,
+			'description' => 'URL to the Facebook page you would like to direct visitors to.',
+			'default'     => 'http://www.facebook.com/ucf',
 			'value'       => $theme_options['facebook_url'],
 		)),
 		new TextField(array(
 			'name'        => 'Twitter URL',
 			'id'          => THEME_OPTIONS_NAME.'[twitter_url]',
-			'description' => 'URL to the twitter user account you would like to direct visitors to.  Example: <em>http://twitter.com/csbrisketbus</em>',
+			'description' => 'URL to the Twitter user account you would like to direct visitors to.',
+			'default'     => 'http://www.twitter.com/ucf',
 			'value'       => $theme_options['twitter_url'],
 		)),
+		new TextField(array(
+			'name'        => 'LinkedIn URL',
+			'id'          => THEME_OPTIONS_NAME.'[linkedin_url]',
+			'description' => 'URL to the LinkedIn user account you would like to direct visitors to.>',
+			'default'     => 'http://www.linkedin.com/company/university-of-central-florida',
+			'value'       => $theme_options['linkedin_url'],
+		)),
+		new TextField(array(
+			'name'        => 'Youtube URL',
+			'id'          => THEME_OPTIONS_NAME.'[youtube_url]',
+			'description' => 'URL to the Youtube user account you would like to direct visitors to.',
+			'default'     => 'http://www.youtube.com/user/UCF',
+			'value'       => $theme_options['youtube_url'],
+		)),
+		new TextField(array(
+			'name'        => 'Foursquare URL',
+			'id'          => THEME_OPTIONS_NAME.'[foursquare_url]',
+			'description' => 'URL to the Foursquare user account you would like to direct visitors to.',
+			'default'     => 'http://www.foursquare.com/',
+			'value'       => $theme_options['foursquare_url'],
+		)),
+		/*
 		new RadioField(array(
 			'name'        => 'Enable Flickr',
 			'id'          => THEME_OPTIONS_NAME.'[enable_flickr]',
@@ -274,7 +297,6 @@ Config::$theme_settings = array(
 			),
 			'value'       => $theme_options['enable_flickr'],
 		)),
-		/*
 		new TextField(array(
 			'name'        => 'Flickr Photostream ID',
 			'id'          => THEME_OPTIONS_NAME.'[flickr_id]',

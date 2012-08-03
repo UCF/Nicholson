@@ -4,19 +4,19 @@
 						<h2>Get Social</h2>
 						<ul class="clearfix">
 							<li>
-								<a id="facebook" href="http://www.facebook.com">Facebook</a>
+								<a id="facebook" href="<?=get_theme_option('facebook_url')?>">Facebook</a>
 							</li>
 							<li>
-								<a id="twitter" href="http://www.twitter.com">Twitter</a>
+								<a id="twitter" href="<?=get_theme_option('twitter_url')?>">Twitter</a>
 							</li>
 							<li>
-								<a id="linkedin" href="http://www.linked.com">LinkedIn</a>
+								<a id="linkedin" href="<?=get_theme_option('linkedin_url')?>">LinkedIn</a>
 							</li>
 							<li>
-								<a id="youtube" href="http://www.youtube.com">Youtube</a>
+								<a id="youtube" href="<?=get_theme_option('youtube_url')?>">Youtube</a>
 							</li>
 						</ul>
-						<a id="foursquare" href="http://www.foursquare.com">Foursquare</a>
+						<a id="foursquare" href="<?=get_theme_option('foursquare_url')?>">Foursquare</a>
 					</div>
 					<div class="span5 center">
 						<a href="<?=get_theme_option('donate_link_url')?>" id="donate">
