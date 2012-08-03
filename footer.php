@@ -19,7 +19,7 @@
 						<a id="foursquare" href="http://www.foursquare.com">Foursquare</a>
 					</div>
 					<div class="span5 center">
-						<a href="http://www.google.com" id="donate">
+						<a href="<?=get_theme_option('donate_link_url')?>" id="donate">
 							<h2>Make a Gift &amp; Support Nicholson</h2>
 							Click here to donate now
 						</a>

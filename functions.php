@@ -204,8 +204,8 @@ Config::$theme_settings = array(
 			'value'       => $theme_options['search_per_page'],
 		)),
 	),
-	/*
 	'Site' => array(
+		/*
 		new TextField(array(
 			'name'        => 'Contact Email',
 			'id'          => THEME_OPTIONS_NAME.'[site_contact]',
@@ -232,8 +232,15 @@ Config::$theme_settings = array(
 			'default'     => 'This is the site\'s default description, change or remove it on the <a href="'.get_admin_url().'admin.php?page=theme-options#site">theme options page</a> in the admin site.',
 			'value'       => $theme_options['site_description'],
 		)),
+		*/
+		new TextField(array(
+			'name'        => 'Donate Link URL',
+			'id'          => THEME_OPTIONS_NAME.'[donate_link_url]',
+			'description' => 'The URL of the donate link in the page footer.',
+			'default'     => 'http://www.ucffoundation.org',
+			'value'       => $theme_options['donate_link_url'],
+		)),
 	),
-	*/
 	'Social' => array(
 		new RadioField(array(
 			'name'        => 'Enable OpenGraph',
@@ -544,7 +551,7 @@ function get_additional_image($post) {
  **/
 function get_pagination_details($params = array(), $page_size = 9, $filter = null) {
 	global $post;
-	
+
 	if(!isset($_GET['pp']) || !is_numeric($_GET['pp']) || (int)$_GET['pp'] < 1) {
 		$page = 1;
 	} else {
@@ -620,5 +627,16 @@ function get_archive_years(){
 	}else{
 		return array();
 	}
+}
+
+/**
+ * Returns a theme option value or NULL if it doesn't exist
+ *
+ * @return string/null
+ * @author Chris Conover
+ **/
+function get_theme_option($key) {
+	global $theme_options;
+	return isset($theme_options[$key]) ? $theme_options[$key] : NULL;
 }
 ?>
