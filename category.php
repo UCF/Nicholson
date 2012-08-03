@@ -42,6 +42,7 @@
 							'offset'      => $pagination_details['offset'])
 					);
 				?>
+				<?php get_template_part('includes/below-the-fold'); ?>
 			</div>
 		</div>
 	</div>
