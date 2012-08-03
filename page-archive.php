@@ -93,17 +93,16 @@
 							'limit'       => $pagination_details['page_size'],
 							'offset'      => $pagination_details['offset'])
 					);
+					if(function_exists('archive_year')) {
+						remove_filter('posts_where', 'archive_where');
+					}
 					if($content == '') {?>
 						<p><strong>There are no archived posts for this year</strong></p>
 					<? } else { ?>
 						<?=$content?>
 					<? } ?>
+				<?php get_template_part('includes/below-the-fold'); ?>
 			</div>
 		</div>
 	</div>
-	<?
-	if(function_exists('archive_year')) {
-		remove_filter('posts_where', 'archive_where');
-	}
-	?>
 <?php get_footer();?>
