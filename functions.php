@@ -205,34 +205,24 @@ Config::$theme_settings = array(
 		)),
 	),
 	'Site' => array(
-		/*
-		new TextField(array(
-			'name'        => 'Contact Email',
-			'id'          => THEME_OPTIONS_NAME.'[site_contact]',
-			'description' => 'Contact email address that visitors to your site can use to contact you.',
-			'value'       => $theme_options['site_contact'],
-		)),
-		new TextField(array(
+		new TextareaField(array(
 			'name'        => 'Organization Name',
 			'id'          => THEME_OPTIONS_NAME.'[organization_name]',
 			'description' => 'Your organization\'s name',
 			'value'       => $theme_options['organization_name'],
 		)),
-		new SelectField(array(
-			'name'        => 'Home Image',
-			'id'          => THEME_OPTIONS_NAME.'[site_image]',
-			'description' => 'Image to feature on the homepage.  Select any image uploaded to the <a href="'.get_admin_url().'upload.php">media gallery</a> or <a href="'.get_admin_url().'media-new.php">upload a new image</a>.',
-			'choices'     => get_image_choices(),
-			'value'       => $theme_options['site_image'],
+		new TextareaField(array(
+			'name'        => 'Mailing Address',
+			'id'          => THEME_OPTIONS_NAME.'[mailing_address]',
+			'description' => 'Your organization\'s mailing address',
+			'value'       => $theme_options['mailing_address'],
 		)),
 		new TextareaField(array(
-			'name'        => 'Site Description',
-			'id'          => THEME_OPTIONS_NAME.'[site_description]',
-			'description' => 'A quick description of your organization and its role.',
-			'default'     => 'This is the site\'s default description, change or remove it on the <a href="'.get_admin_url().'admin.php?page=theme-options#site">theme options page</a> in the admin site.',
-			'value'       => $theme_options['site_description'],
+			'name'        => 'Contact Information',
+			'id'          => THEME_OPTIONS_NAME.'[contact_information]',
+			'description' => 'Your organization\'s contact information.',
+			'value'       => $theme_options['contact_information'],
 		)),
-		*/
 		new TextField(array(
 			'name'        => 'Donate Link URL',
 			'id'          => THEME_OPTIONS_NAME.'[donate_link_url]',

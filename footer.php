@@ -27,25 +27,13 @@
 					<div class="span3 right">
 						<h2>Contact Us</h2>
 						<p>
-							<strong>Nicholson School of Communication</strong>
-							<br />
-							College of Sciences
-							<br />
-							University of Central Florida
+							<?=get_theme_option('organization_name')?>
 						</p>
 						<p>
-							P.O. Box 161344
-							<br />
-							Orlando, Florida 32816-1344
+							<?=get_theme_option('mailing_address')?>
 						</p>
 						<p>
-							Phone: 407-823-1711
-							<br />
-							Fax: 407-823-6360
-							<br />
-							Room: NSC 238
-							<br />
-							Email: <a href="mailto:nassc@ucf.edu">nassc@ucf.edu</a>
+							<?=get_theme_option('contact_information')?>
 						</p>
 					</div>
 				</div>
