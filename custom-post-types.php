@@ -676,13 +676,22 @@ class Person extends CustomPostType
 	}
 
 	public static function get_news_posts($person, $limit = null) {
-		return get_posts(
-			array(
-				'numberposts'   => is_null($limit) ? 4 : $limit,
-				'meta_key'   => 'post_person',
-				'meta_value' => $person->ID
-			)
-		);
+		$posts      = get_posts(array('numberposts' =>-1, 'post_type' => 'post'));
+		$news_posts = array();
+		$count = 1;
+		foreach($posts as $post) {
+			$people = get_post_meta($post->ID, 'post_person', True);
+			if($people != '' && ($people = unserialize($people)) !== False) {
+				if(in_array($person->ID, $people)) {
+					$news_posts[] = $post;
+					if( (is_null($limit) && $count == 4) || (is_numeric($limit) && $count == $limit)) {
+						break;
+					}
+				}
+			}
+			$count++;
+		}
+		return $news_posts;
 	}
 
 	public function objectsToHTML($people, $css_classes) {
@@ -772,7 +781,7 @@ class Post extends CustomPostType
 				'name'    => __('Person'),
 				'desc'    => 'By selecting a person associated with this post, it will appear on their profile page.',
 				'id'      => $this->options('name').'_person',
-				'type'    => 'select',
+				'type'    => 'multiselect',
 				'options' => $person_options
 			),
 			array(

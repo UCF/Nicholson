@@ -1831,7 +1831,11 @@ function save_file($post_id, $field){
 
 function save_default($post_id, $field){
 	$old = get_post_meta($post_id, $field['id'], true);
-	$new = $_POST[$field['id']];
+	if($field['type'] == 'multiselect') {
+		$new = serialize($_POST[$field['id']]);
+	} else {
+		$new = $_POST[$field['id']];
+	}
 	
 	# Update if new is not empty and is not the same value as old
 	if ($new !== "" and $new !== null and $new != $old) {
@@ -1918,7 +1922,18 @@ function _show_meta_boxes($post, $meta_box){
 					<option <?=($current_value == $v) ? ' selected="selected"' : ''?> value="<?=$v?>"><?=$k?></option>
 				<?php endforeach;?>
 				</select>
-			
+			<?php break; case 'multiselect': 
+				# Mutliselect must be desiarlized on output
+				$current_value = unserialize($current_value);
+				if($current_value == '') {
+					$current_value = array();
+				}?>
+				<select name="<?=$field['id']?>[]" id="<?=$field['id']?>" multiple="multiple">
+					<option value=""><?=($field['default']) ? $field['default'] : '--'?></option>
+				<?php foreach ($field['options'] as $k=>$v):?>
+					<option <?=in_array($v, $current_value) ? ' selected="selected"' : ''?> value="<?=$v?>"><?=$k?></option>
+				<?php endforeach;?>
+				</select>
 			<?php break; case 'radio':?>
 				<?php foreach ($field['options'] as $k=>$v):?>
 				<label for="<?=$field['id']?>_<?=slug($k, '_')?>"><?=$k?></label>
