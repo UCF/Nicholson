@@ -678,7 +678,7 @@ class Person extends CustomPostType
 	public static function get_news_posts($person, $limit = null) {
 		return get_posts(
 			array(
-				'numposts'   => is_null($limit) ? 4 : $limit,
+				'numberposts'   => is_null($limit) ? 4 : $limit,
 				'meta_key'   => 'post_person',
 				'meta_value' => $person->ID
 			)
