@@ -779,7 +779,7 @@ class Post extends CustomPostType
 		return array(
 			array(
 				'name'    => __('Person'),
-				'desc'    => 'By selecting a person associated with this post, it will appear on their profile page.',
+				'desc'    => 'Optional. Posts associated with a person will be displayed on their profile page.<br />Hold the control (windows) or command (mac) key and click to select mulitple.',
 				'id'      => $this->options('name').'_person',
 				'type'    => 'multiselect',
 				'options' => $person_options
