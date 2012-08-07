@@ -543,7 +543,7 @@ function get_next_post_url($post) {
  **/
 function get_additional_image($post) {
 	if( ($featured_image = get_featured_image($post)) !== False ) {
-		$attachments = get_posts(array('numposts'=>-1, 'post_type'=>'attachment', 'post_parent'=>$post->ID));
+		$attachments = get_posts(array('numberposts'=>-1, 'post_type'=>'attachment', 'post_parent'=>$post->ID));
 
 		foreach($attachments as $attachment) {
 			if($attachment->ID != $featured_image->ID && strpos($attachment->post_mime_type, 'image/') == 0) {
@@ -572,7 +572,7 @@ function get_pagination_details($params = array(), $page_size = 9, $filter = nul
 	$offset    = ($page - 1) * $page_size;
 	
 	# All the posts
-	$params['numposts'] = -1;
+	$params['numberposts'] = -1;
 	if(function_exists($filter)) {
 		add_filter('posts_where', $filter);
 	}
@@ -588,7 +588,7 @@ function get_pagination_details($params = array(), $page_size = 9, $filter = nul
 	wp_reset_postdata();
 
 	# Posts for this page
-	$params['numposts'] = $page_size;
+	$params['numberposts'] = $page_size;
 	$params['offset']   = $offset;
 
 	$num_pages     = (int)ceil(count($all_posts) / $page_size);

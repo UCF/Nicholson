@@ -763,7 +763,7 @@ class Post extends CustomPostType
 
 		# Person options
 		$person_options = array();
-		foreach(get_posts(array('num_posts'=>-1, 'post_type'=>'person', 'orderby'=>'post_title')) as $person) {
+		foreach(get_posts(array('numberposts'=>-1, 'post_type'=>'person', 'orderby'=>'post_title')) as $person) {
 			$person_options[Person::get_name($person)] = $person->ID;
 		}
 
