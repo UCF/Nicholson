@@ -220,4 +220,28 @@ function sc_category_list($attrs, $content) {
 	return ob_get_clean();
 }
 add_shortcode('category-list', 'sc_category_list');
+
+/**
+ * List of archive years as links to archive pages
+ *
+ * @author Chris Conover
+ * @return string
+**/
+function sc_archive_year_list($attrs, $content) {
+	$years = get_archive_years();
+	$archive_page = get_page_by_title('Archive');
+	if($archive_page === False) {
+		print 'Archive page does not exist.';
+	} else {
+		$archive_page_url = get_permalink($archive_page->ID);
+		ob_start();?>
+		<ul class="unstyled">
+			<? foreach($years as $year) { ?>
+				<li><a href="<?=$archive_page_url?>?yy=<?=$year?>"><?=$year?></a></li>
+			<? } ?>
+		</ul><?
+		return ob_get_clean();
+	}
+}
+add_shortcode('archive-year-list', 'sc_archive_year_list');
 ?>
