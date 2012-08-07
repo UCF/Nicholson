@@ -172,4 +172,52 @@ function sc_titled_section($attrs, $content) {
 	}
 }
 add_shortcode('titled-section', 'sc_titled_section');
+
+/**
+ * List of categories split up into a specified number of columns
+ * columns - number of columns. default is 3
+ * width - width of each column. default is 2
+ * @author Chris Conover
+ * @return string
+**/
+function sc_category_list($attrs, $content) {
+	if(isset($attrs['columns']) && is_numeric($attrs['columns']) && $attrs['columns'] > 0) {
+		$number_columns = $attrs['columns'];
+	} else {
+		$number_columns = 3;
+	}
+
+	if(isset($attrs['width']) && is_numeric($attrs['width']) && $attrs['width'] > 0) {
+		$column_width = $attrs['width'];
+	} else {
+		$column_width = 2;
+	}
+
+	$categories = get_categories();
+
+	$columns = array();
+	$count   = 1;
+	foreach($categories as $category) {
+		$columns[$count][] = $category;
+		if($count == 3) {
+			$count = 1;
+		} else {
+			$count++;
+		}
+	}
+	ob_start();?>
+	<div class="row">
+	<? foreach($columns as $column) {?>
+		<div class="span<?=$column_width?>">
+			<ul class="unstyled">
+				<? foreach($column as $category) { ?>
+				<li><a href="<?=get_category_link($category->term_id)?>"><?=$category->name?></a></li>
+				<? } ?>
+			</ul>
+		</div>
+	<? } ?>
+	</div><?
+	return ob_get_clean();
+}
+add_shortcode('category-list', 'sc_category_list');
 ?>
