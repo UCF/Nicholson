@@ -20,34 +20,40 @@
 				<div class="row">
 					<div class="span8">
 						<ul id="details" class="unstyled">
-							<li class="job_title"><?=get_post_meta($post->ID, 'person_jobtitle', True)?></li>
-							<li class="phones"><?=get_post_meta($post->ID, 'person_phones', True)?></li>
+							<? $job_title = get_post_meta($post->ID, 'person_jobtitle', True); ?>
+							<? if($job_title) { ?>
+							<li class="job_title"><?=$job_title?></li>
+							<? } ?>
+							<? $phone = get_post_meta($post->ID, 'person_phones', True); ?>
+							<? if($phone) { ?>
+							<li class="phones"><?=$phone?></li>
+							<? } ?>
+							<? $email     = get_post_meta($post->ID, 'person_email', True); ?>
+							<? if($email) {?>
 							<li class="email">
-								<? $email     = get_post_meta($post->ID, 'person_email', True); ?>
-								<? if($email) {?>
-									<a href="mailto:<?=$email?>"><?=$email?></a>
-								<? } ?>
+								<a href="mailto:<?=$email?>"><?=$email?></a>
 							</li>
+							<? } ?>
+							<? 
+								$office_location_url  = get_post_meta($post->ID, 'person_office_location_url', True);
+								$office_location_text = get_post_meta($post->ID, 'person_office_location_text', True);
+							?>
+							<? if($office_location_url && $office_location_text) {?>
 							<li class="location">
-								<? 
-									$office_location_url  = get_post_meta($post->ID, 'person_office_location_url', True);
-									$office_location_text = get_post_meta($post->ID, 'person_office_location_text', True);
-								?>
-								<? if($office_location_url && $office_location_text) {?>
-									<a href="<?=$office_location_url?>"><?=$office_location_text?></a>
-								<? } ?>
+								<a href="<?=$office_location_url?>"><?=$office_location_text?></a>
 							</li>
+							<? } ?>
+							<? 
+								$cv_url = False;
+								if(($cv_post_id = get_post_meta($post->ID, 'person_cv', True)) && ($cv_post = get_post($cv_post_id))) {
+									$cv_url  = wp_get_attachment_url($cv_post->ID);
+								}
+							?>
+							<? if($cv_url) {?>
 							<li class="cv">
-								<? 
-									$cv_url = False;
-									if(($cv_post_id = get_post_meta($post->ID, 'person_cv', True)) && ($cv_post = get_post($cv_post_id))) {
-										$cv_url  = wp_get_attachment_url($cv_post->ID);
-									}
-								?>
-								<? if($cv_url) {?>
-									<a href="<?=$cv_url?>">Curriculum Vita</a>
-								<? } ?>
+								<a href="<?=$cv_url?>">Curriculum Vita</a>
 							</li>
+							<? } ?>
 						</ul>
 					</div>
 				</div>
