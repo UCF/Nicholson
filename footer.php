@@ -34,10 +34,13 @@
 						<? } ?>
 					</div>
 					<div class="span5 center">
+						<? $donate_link_text = get_theme_option('donate_link_text'); ?>
+						<? if($donate_link_text) { ?>
 						<a href="<?=get_theme_option('donate_link_url')?>" id="donate">
 							<h2>Make a Gift &amp; Support Nicholson</h2>
-							Click here to donate now
+							<?=$donate_link_text?>
 						</a>
+						<? } ?>
 					</div>
 					<div class="span3 right">
 						<h2>Contact Us</h2>

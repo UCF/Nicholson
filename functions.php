@@ -224,6 +224,14 @@ Config::$theme_settings = array(
 			'value'       => $theme_options['contact_information'],
 		)),
 		new TextField(array(
+			'name'        => 'Donate Link Text',
+			'id'          => THEME_OPTIONS_NAME.'[donate_link_text]',
+			'description' => 'The text of the donate link in the page footer.',
+			'default'     => 'Click here to donate now.',
+			'value'       => $theme_options['donate_link_text'],
+		)),
+
+		new TextField(array(
 			'name'        => 'Donate Link URL',
 			'id'          => THEME_OPTIONS_NAME.'[donate_link_url]',
 			'description' => 'The URL of the donate link in the page footer.',
