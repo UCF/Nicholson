@@ -643,7 +643,7 @@ class Person extends CustomPostType
 					'name'    => __('Office Hours'),
 					'desc'    => __(''),
 					'id'      => $this->options('name').'_office_hours',
-					'type'    => 'text',
+					'type'    => 'textarea',
 				),
 				array(
 					'name'    => __('C.V.'),
