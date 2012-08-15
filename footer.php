@@ -3,20 +3,35 @@
 					<div class="span4 left" id="social">
 						<h2>Get Social</h2>
 						<ul class="clearfix">
+							<? $facebook_url = get_theme_option('facebook_url'); ?>
+							<? if($facebook_url != '') { ?>
 							<li>
-								<a id="facebook" href="<?=get_theme_option('facebook_url')?>">Facebook</a>
+								<a id="facebook" href="<?=$facebook_url?>">Facebook</a>
 							</li>
+							<? } ?>
+							<? $twitter_url = get_theme_option('twitter_url'); ?>
+							<? if($twitter_url != '') { ?>
 							<li>
-								<a id="twitter" href="<?=get_theme_option('twitter_url')?>">Twitter</a>
+								<a id="twitter" href="<?=$twitter_url?>">Twitter</a>
 							</li>
+							<? } ?>
+							<? $linkedin_url = get_theme_option('linkedin_url'); ?>
+							<? if($linkedin_url != '') { ?>
 							<li>
-								<a id="linkedin" href="<?=get_theme_option('linkedin_url')?>">LinkedIn</a>
+								<a id="linkedin" href="<?=$linkedin_url?>">LinkedIn</a>
 							</li>
+							<? } ?>
+							<? $youtube_url = get_theme_option('youtube_url'); ?>
+							<? if($youtube_url != '') { ?>
 							<li>
-								<a id="youtube" href="<?=get_theme_option('youtube_url')?>">Youtube</a>
+								<a id="youtube" href="<?=$youtube_url?>">Youtube</a>
 							</li>
+							<? } ?>
 						</ul>
-						<a id="foursquare" href="<?=get_theme_option('foursquare_url')?>">Foursquare</a>
+						<? $foursquare_url = get_theme_option('foursquare_url'); ?>
+						<? if($foursquare_url != '') { ?>
+						<a id="foursquare" href="<?=$foursquare_url?>">Foursquare</a>
+						<? } ?>
 					</div>
 					<div class="span5 center">
 						<a href="<?=get_theme_option('donate_link_url')?>" id="donate">
