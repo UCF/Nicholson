@@ -29,7 +29,7 @@
 					<h3>Shortcodes</h3>
 					
 					<h4>Generic Shortcode</h4>
-					<p>Any post type (Posts, Pages, Front Page Centerpieces, People, and Documents) can be outputted using a shortcode of the form <post type>-list. The <post type> placeholder is the name of the post type as specified in custom_post_types.php. For example, to output a list of People posts the shortcode would look like the following: [person-list]. </p>
+					<p>Any post type (Posts, Pages, Front Page Centerpieces, People, and Documents) can be outputted using a shortcode of the form &lt;post type&gt;-list. The &lt;post type&gt; placeholder is the name of the post type as specified in custom_post_types.php. For example, to output a list of People posts the shortcode would look like the following: [person-list]. </p>
 
 					<p>This generic shortcode can take the following arguments although none are required:</p>
 					<ul style="margin-left:20px;">
