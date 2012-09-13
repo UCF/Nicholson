@@ -87,6 +87,8 @@ function sc_person_picture_list($attrs) {
 	$row_size      = isset($attrs['row-size']) ? (int)$attrs['row-size'] : 5;
 	$people        = sc_object_list($attrs, array('objects_only' => True));
 
+	if(count($people) == 0) return '';
+
 	ob_start();
 	?><div class="person-picture-list"><?
 	$count = 0;
