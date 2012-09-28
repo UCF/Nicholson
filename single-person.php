@@ -79,6 +79,7 @@
 				$news_posts_content .= '</ul>';
 			}
 		?>
+		<? if($post->post_content != '') { ?>
 		<?= sc_titled_section(
 				array('title'=>'Biography'),
 				'<div class="row"><div class="span8">'.
@@ -92,5 +93,6 @@
 				</div></div>'
 			);
 		?>
+		<? } ?>
 	<?php get_template_part('includes/below-the-fold'); ?>
 <?php get_footer();?>
