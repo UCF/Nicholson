@@ -714,19 +714,19 @@ class Person extends CustomPostType
 					$link = ($person->post_content == '') ? False : True; ?>
 						<tr>
 							<td class="name">
-								<?if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
+								<a href="<?=get_permalink($person->ID)?>">
 									<?=$this->get_name($person)?>
-								<?if($link) {?></a><?}?>
+								</a>
 							</td>
 							<td class="job_title">
-								<?if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
-								<?=get_post_meta($person->ID, 'person_jobtitle', True)?>
-								<?if($link) {?></a><?}?>
+								<a href="<?=get_permalink($person->ID)?>">
+									<?=get_post_meta($person->ID, 'person_jobtitle', True)?>
+								</a>
 							</td> 
 							<td class="phones">
-								<?if($link) {?><a href="<?=get_permalink($person->ID)?>"><?}?>
-								<?=get_post_meta($person->ID, 'person_phones', True)?>
-								<?if($link) {?></a><?}?>
+								<a href="<?=get_permalink($person->ID)?>">
+									<?=get_post_meta($person->ID, 'person_phones', True)?>
+								</a>
 							</td>
 							<td class="email">
 								<?=(($email != '') ? '<a href="mailto:'.$email.'">'.$email.'</a>' : '')?>
