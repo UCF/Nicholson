@@ -21,8 +21,9 @@ abstract class CustomPostType{
 		$built_in       = False,
 
 		# Optional default ordering for generic shortcode if not specified by user.
-		$default_orderby = null,
-		$default_order   = null;
+		$default_orderby  = null,
+		$default_meta_key = null,
+		$default_order    = null;
 	
 	
 	/**
@@ -593,7 +594,10 @@ class Person extends CustomPostType
 		$use_metabox    = True,
 		$use_thumbnails = True,
 		$use_order      = True,
-		$taxonomies     = array('org_groups', 'category');
+		$taxonomies     = array('org_groups', 'category'),
+
+		$default_orderby  = 'meta_value',
+		$default_meta_key = 'person_orderby_name';
 
 		public function fields(){
 			$fields = array(

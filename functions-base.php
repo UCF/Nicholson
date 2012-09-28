@@ -503,13 +503,14 @@ function sc_object_list($attrs, $options = array()){
 
 	# set defaults and combine with passed arguments
 	$default_attrs = array(
-		'type'    => null,
-		'limit'   => -1,
-		'join'    => 'or',
-		'class'   => '',
-		'orderby' => 'menu_order title',
-		'order'   => 'ASC',
-		'offset'  => 0
+		'type'     => null,
+		'limit'    => -1,
+		'join'     => 'or',
+		'class'    => '',
+		'orderby'  => 'menu_order title',
+		'order'    => 'ASC',
+		'offset'   => 0,
+		'meta_key' => ''
 	);
 	$params = array_merge($default_attrs, $attrs);
 	
@@ -531,11 +532,15 @@ function sc_object_list($attrs, $options = array()){
 
 	# Use post type specified ordering?
 	if(!isset($attrs['orderby']) && !is_null($class->default_orderby)) {
-		$params['orderby'] = $class->orderby;
+		$params['orderby'] = $class->default_orderby;
+	}
+	if(!isset($attrs['meta_key']) && !is_null($class->default_meta_key)) {
+		$params['meta_key'] = $class->default_meta_key;
 	}
 	if(!isset($attrs['order']) && !is_null($class->default_order)) {
 		$params['order'] = $class->default_order;
 	}
+
 
 	# get taxonomies and translation
 	$translate  = array(
@@ -574,7 +579,8 @@ function sc_object_list($attrs, $options = array()){
 		'posts_per_page' => $params['limit'],
 		'orderby'        => $params['orderby'],
 		'order'          => $params['order'],
-		'offset'         => $params['offset']
+		'offset'         => $params['offset'],
+		'meta_key'       => $params['meta_key']
 	);
 
 	$query = new WP_Query($query_array);
