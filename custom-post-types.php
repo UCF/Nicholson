@@ -685,7 +685,7 @@ class Person extends CustomPostType
 		$count = 1;
 		foreach($posts as $post) {
 			$people = get_post_meta($post->ID, 'post_person', True);
-			if($people != '' && ($people = unserialize($people)) !== False) {
+			if($people != '' && ($people = unserialize($people)) !== False && is_array($people)) {
 				if(in_array($person->ID, $people)) {
 					$news_posts[] = $post;
 					if( (is_null($limit) && $count == 4) || (is_numeric($limit) && $count == $limit)) {
