@@ -585,9 +585,6 @@ function get_pagination_details($params = array(), $page_size = 9, $filter = nul
 		add_filter('posts_where', $filter);
 	}
 	$query = new WP_Query($params);
-	if(function_exists($filter)) {
-		add_filter('posts_where', $filter);
-	}
 	$all_posts = array();
 	while($query->have_posts()) {
 		$query->the_post();
