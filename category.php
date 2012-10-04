@@ -20,10 +20,10 @@
 				<div class="pagination pull-right">
 					<ul>
 						<? if($pagination_details['has_previous']) { ?>
-						<li><a href="?page=<?=$pagination_details['page'] - 1?>">Prev</a></li>
+						<li><a href="?pp=<?=$pagination_details['page'] - 1?>">Prev</a></li>
 						<? } ?>
 						<? if($pagination_details['has_next']) { ?>
-						<li><a href="?page=<?=$pagination_details['page'] + 1?>">Next</a></li>
+						<li><a href="?pp=<?=$pagination_details['page'] + 1?>">Next</a></li>
 						<? } ?>
 						<li class="status"><a><?=$pagination_details['page']?> of <?=$pagination_details['num_pages']?></a></li>
 					</ul>
