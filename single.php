@@ -5,6 +5,7 @@
 		<div class="row">
 			<div class="span7">
 				<h3><?=the_title()?></h3>
+				<p><?=date('F j, Y', strtotime($post->post_date))?></p>
 				<?=$content = str_replace(']]>', ']]>', apply_filters('the_content', $post->post_content))?>
 			</div>
 			<div class="span4 offset1">
@@ -41,14 +42,9 @@
 		</div>
 		<div class="row previous-next">
 			<div class="span7">
-				<? $previous_url = get_previous_post_url($post); ?>
-				<? $next_url     = get_next_post_url($post); ?>
-				<? if($previous_url != False) { ?>
-					<a href="<?=$previous_url?>" class="previous pull-left">Previous Article</a>
-				<? } ?>
-				<? if($next_url != False) { ?>
-					<a href="<?=$next_url?>" class="next pull-right">Next Article</a>
-				<? } ?>
+
+				<span class="previous pull-left"><?=previous_post_link('%link', 'Previous Article')?></a></span>
+				<span class="next pull-right"><?=next_post_link('%link', 'Next Article')?></a>
 			</div>
 		</div>
 		<?php get_template_part('includes/below-the-fold'); ?>
