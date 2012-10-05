@@ -47,7 +47,8 @@
 							'categories'  => $wp_query->queried_object->slug,
 							'type'        =>'post',
 							'limit'       => $page_size,
-							'offset'      => ($current_page - 1) * $page_size
+							'offset'      => ($current_page - 1) * $page_size,
+							'orderby'     => 'post_date'
 						),
 						array('max_num_pages' => True)
 					);
