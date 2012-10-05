@@ -230,13 +230,19 @@ Config::$theme_settings = array(
 			'default'     => 'Click here to donate now.',
 			'value'       => $theme_options['donate_link_text'],
 		)),
-
 		new TextField(array(
 			'name'        => 'Donate Link URL',
 			'id'          => THEME_OPTIONS_NAME.'[donate_link_url]',
 			'description' => 'The URL of the donate link in the page footer.',
 			'default'     => 'http://www.ucffoundation.org',
 			'value'       => $theme_options['donate_link_url'],
+		)),
+		new TextField(array(
+			'name'        => 'Pagination Page Size',
+			'id'          => THEME_OPTIONS_NAME.'[pagination_page_size]',
+			'description' => 'How many items will appear on each paginated page.',
+			'default'     => '9',
+			'value'       => $theme_options['pagination_page_size'],
 		)),
 	),
 	'Social' => array(
@@ -563,54 +569,6 @@ function get_additional_image($post) {
 }
 
 /**
- * 
- * Pagination details based on passed parameters
- *
- * @return array
- * @author Chris Conover
- **/
-function get_pagination_details($params = array(), $page_size = 9, $filter = null) {
-	global $post;
-
-	if(!isset($_GET['pp']) || !is_numeric($_GET['pp']) || (int)$_GET['pp'] < 1) {
-		$page = 1;
-	} else {
-		$page = (int)$_GET['pp'];
-	}
-	$offset    = ($page - 1) * $page_size;
-	
-	# All the posts
-	$params['numberposts'] = -1;
-	if(function_exists($filter)) {
-		add_filter('posts_where', $filter);
-	}
-	$query = new WP_Query($params);
-	$all_posts = array();
-	while($query->have_posts()) {
-		$query->the_post();
-		$all_posts[] = $post;
-	}
-	wp_reset_postdata();
-
-	# Posts for this page
-	$params['numberposts'] = $page_size;
-	$params['offset']   = $offset;
-
-	$num_pages     = (int)ceil(count($all_posts) / $page_size);
-	$has_next      = (($page + 1) > $num_pages) ? False : True;
-	$has_previous  = ($page > 1) ? True : False;
-
-	return array(
-		'page'         => $page,
-		'offset'       => $offset,
-		'page_size'    => $page_size,
-		'num_pages'    => $num_pages,
-		'has_next'     => $has_next,
-		'has_previous' => $has_previous
-	);
-}
-
-/**
  *
  * Get Post post type archive years 
  *
@@ -655,5 +613,22 @@ function get_archive_years(){
 function get_theme_option($key) {
 	global $theme_options;
 	return isset($theme_options[$key]) ? $theme_options[$key] : NULL;
+}
+
+/**
+ * Returns pagination page size
+ *
+ * @return integer
+ * @author Chris Conover
+ **/
+function get_pagination_page_size() {
+	$page_size = get_theme_option('pagination_page_size');
+
+	if(!is_numeric($page_size) || (int)$page_size < 1) {
+		$page_size = 9;
+	} else {
+		$page_size = (int)$page_size;
+	}
+	return $page_size;
 }
 ?>

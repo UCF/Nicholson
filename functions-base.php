@@ -496,9 +496,9 @@ function sc_object_list($attrs, $options = array()){
 	$default_options = array(
 		'default_content' => null,
 		'sort_func'       => null,
-		'objects_only'    => False
+		'objects_only'    => False,
+		'max_num_pages'   => False
 	);
-
 	extract(array_merge($default_options, $options));
 
 	# set defaults and combine with passed arguments
@@ -582,9 +582,9 @@ function sc_object_list($attrs, $options = array()){
 		'offset'         => $params['offset'],
 		'meta_key'       => $params['meta_key']
 	);
-
-	$query = new WP_Query($query_array);
 	
+	$query = new WP_Query($query_array);
+
 	global $post;
 	$objects = array();
 	while($query->have_posts()){
@@ -608,7 +608,12 @@ function sc_object_list($attrs, $options = array()){
 	}else{
 		$html = $default_content;
 	}
-	return $html;
+	
+	if($max_num_pages) {
+		return array('html' => $html, 'max_num_pages' => $query->max_num_pages);
+	} else {
+		return $html;
+	}
 }
 
 

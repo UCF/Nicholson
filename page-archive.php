@@ -32,38 +32,52 @@
 				<h2>News Archive</h2>
 			</div>
 			<div class="span3">
-				<? $pagination_details = get_pagination_details(
-						array('tax_query'=>
-							array(
-								'taxonomy'=>'category',
-								'field'   =>'slug',
-								'terms'   => $wp_query->queried_object->slug
-							),
+				<? 
+
+					$page_size = get_pagination_page_size();
+
+					if(!isset($_GET['pp']) || !is_numeric($_GET['pp']) || (int)$_GET['pp'] < 1) {
+						$current_page = 1;
+					} else {
+						$current_page = (int)$_GET['pp'];
+					}
+
+					$results = sc_object_list(
+						array(
+							'categories'  => $wp_query->queried_object->slug,
+							'type'        =>'post',
+							'limit'       => $page_size,
+							'offset'      => ($current_page - 1) * $page_size
 						),
-						9,
-						'archive_where'
+						array('max_num_pages' => True)
 					);
+					$max_num_pages = $results['max_num_pages'];
+					$html          = $results['html'];
+					
+					$has_next      = (($current_page + 1) > $max_num_pages) ? False : True;
+					$has_previous  = ($current_page > 1) ? True : False;
+
 				?>
 				<div class="pagination pull-right">
-					<? if($pagination_details['num_pages'] > 1) { ?>
+					<? if($max_num_pages > 1) { ?>
 					<ul>
-						<? if($pagination_details['has_previous']) { ?>
+						<? if($has_previous) { ?>
 						<li>
-							<a href="<?=add_query_arg(array('pp' => $pagination_details['page'] - 1, 'yy' => $specific_year))?>">
+							<a href="<?=add_query_arg(array('pp' => $current_page - 1, 'yy' => $specific_year))?>">
 								Prev
 							</a>
 						</li>
 						<? } ?>
-						<? if($pagination_details['has_next']) { ?>
+						<? if($has_next) { ?>
 						<li>
-							<a href="<?=add_query_arg(array('pp' => $pagination_details['page'] + 1, 'yy' => $specific_year))?>">
+							<a href="<?=add_query_arg(array('pp' => $current_page + 1, 'yy' => $specific_year))?>">
 								Next
 							</a>
 						</li>
 						<? } ?>
 						<li class="status">
 							<a>
-								<?=$pagination_details['page']?> of <?=$pagination_details['num_pages']?>
+								<?=$current_page?> of <?=$max_num_pages?>
 							</a>
 						</li>
 					</ul>
@@ -86,20 +100,13 @@
 		<div class="row">
 			<div class="span12">
 				<?
-					$content = sc_object_list(
-						array(
-							'categories'  =>$wp_query->queried_object->slug,
-							'type'        =>'post',
-							'limit'       => $pagination_details['page_size'],
-							'offset'      => $pagination_details['offset'])
-					);
 					if(function_exists('archive_year')) {
 						remove_filter('posts_where', 'archive_where');
 					}
-					if($content == '') {?>
+					if($html == '') {?>
 						<p><strong>There are no archived posts for this year</strong></p>
 					<? } else { ?>
-						<?=$content?>
+						<?=$html?>
 					<? } ?>
 				<?php get_template_part('includes/below-the-fold'); ?>
 			</div>
