@@ -908,7 +908,7 @@ function get_article_image($article){
 class FeedManager{
 	static private
 		$feeds        = array(),
-		$cache_length = 0xD2F0;
+		$cache_length = 3600; # one hour
 	
 	/**
 	 * Provided a URL, will return an array representing the feed item for that
@@ -925,7 +925,7 @@ class FeedManager{
 		$simplepie = null;
 		$failed    = False;
 		$cache_key = 'feedmanager-'.md5($url);
-		$content   = get_site_transient($cache_key);
+		$content   = get_transient($cache_key);
 		
 		if ($content === False){
 			$content = @file_get_contents($url);
@@ -934,7 +934,7 @@ class FeedManager{
 				$content = null;
 				error_log('FeedManager failed to fetch data using url of '.$url);
 			}else{
-				set_site_transient($cache_key, $content, self::$cache_length);
+				set_transient($cache_key, $content, self::$cache_length);
 			}
 		}
 		
@@ -1135,7 +1135,7 @@ function display_news($header='h2'){?>
 				<h3 class="title"><a href="<?=$item->get_link()?>" class="ignore-external title"><?=$item->get_title()?></a></h3>
 				<p>
 					<a class="description ignore-external"  href="<?=$item->get_link()?>">
-						<?= truncate($item->get_description());?>
+						<?= truncate(strip_tags($item->get_description()));?>
 					</a>
 				</p>
 				<div class="end"><!-- --></div>
