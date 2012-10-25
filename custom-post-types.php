@@ -691,9 +691,9 @@ class Person extends CustomPostType
 					if( (is_null($limit) && $count == 4) || (is_numeric($limit) && $count == $limit)) {
 						break;
 					}
+					$count++;
 				}
 			}
-			$count++;
 		}
 		return $news_posts;
 	}
